@@ -196,6 +196,7 @@
                     <option value="price-high">Price: High to Low</option>
                     <option value="name">Name: A-Z</option>
                 </select>
+                <button onclick="clearFilters()" class="px-3 py-1.5 text-sm bg-zinc-900 border border-zinc-700 rounded-3xl hover:bg-zinc-800 transition-colors">Clear filters</button>
                 <div id="category-filters" class="flex gap-2 text-sm flex-wrap">
                     <!-- Populated dynamically by JS -->
                 </div>
@@ -371,6 +372,18 @@
         function changeSort() {
             const select = document.getElementById("sort-select")
             currentSort = select ? select.value : "default"
+            renderProducts()
+        }
+
+        function clearFilters() {
+            currentFilter = "All"
+            searchTerm = ""
+            currentSort = "default"
+            const searchInput = document.getElementById("product-search")
+            if (searchInput) searchInput.value = ""
+            const sortSelect = document.getElementById("sort-select")
+            if (sortSelect) sortSelect.value = "default"
+            renderCategoryFilters()
             renderProducts()
         }
 
