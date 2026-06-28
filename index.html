@@ -186,7 +186,9 @@
                 <span class="text-emerald-400 text-xs font-semibold tracking-[2px]">CURATED COLLECTION</span>
                 <h2 class="font-display text-4xl tracking-tighter">Featured Products</h2>
             </div>
-            <a href="#" class="text-sm flex items-center gap-x-1.5 text-zinc-400 hover:text-white">View all <i class="fa-solid fa-chevron-right text-xs"></i></a>
+            <div id="category-filters" class="flex gap-2 text-sm flex-wrap">
+                <!-- Populated dynamically by JS -->
+            </div>
         </div>
         
         <div id="products-grid" class="pod-grid">
@@ -327,12 +329,32 @@
         // Product Data - dynamically loaded from products.json
         let products = []
         let cart = []
+        let currentFilter = "All"
+        
+        function renderCategoryFilters() {
+            const container = document.getElementById("category-filters")
+            if (!container) return
+            const categories = ["All", ...new Set(products.map(p => p.type))]
+            container.innerHTML = ""
+            categories.forEach(cat => {
+                const btn = document.createElement("button")
+                btn.textContent = cat
+                btn.className = `px-4 py-1.5 rounded-3xl border text-xs transition-colors ${currentFilter === cat ? "bg-white text-zinc-950 border-white" : "border-zinc-700 hover:bg-zinc-800"}`
+                btn.onclick = () => {
+                    currentFilter = cat
+                    renderCategoryFilters()
+                    renderProducts()
+                }
+                container.appendChild(btn)
+            })
+        }
         
         function renderProducts() {
             const grid = document.getElementById('products-grid')
             grid.innerHTML = ''
             
-            products.forEach(product => {
+            const filtered = currentFilter === "All" ? products : products.filter(p => p.type === currentFilter)
+            filtered.forEach(product => {
                 const card = document.createElement('div')
                 card.className = `product-card bg-zinc-900 border border-zinc-800 rounded-3xl overflow-hidden group`
                 
@@ -567,6 +589,7 @@
             }
             
             renderProducts()
+            renderCategoryFilters()
             initTailwind()
             renderProducts()
             updateCartCount()
