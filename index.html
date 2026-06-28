@@ -186,8 +186,13 @@
                 <span class="text-emerald-400 text-xs font-semibold tracking-[2px]">CURATED COLLECTION</span>
                 <h2 class="font-display text-4xl tracking-tighter">Featured Products</h2>
             </div>
-            <div id="category-filters" class="flex gap-2 text-sm flex-wrap">
-                <!-- Populated dynamically by JS -->
+            <div class="flex items-center gap-3">
+                <input id="product-search" type="text" placeholder="Search products..." 
+                       class="px-4 py-1.5 text-sm bg-zinc-900 border border-zinc-700 rounded-3xl focus:outline-none focus:border-zinc-500 w-64"
+                       oninput="searchProducts()">
+                <div id="category-filters" class="flex gap-2 text-sm flex-wrap">
+                    <!-- Populated dynamically by JS -->
+                </div>
             </div>
         </div>
         
@@ -330,6 +335,7 @@
         let products = []
         let cart = []
         let currentFilter = "All"
+        let searchTerm = ""
         
         function renderCategoryFilters() {
             const container = document.getElementById("category-filters")
@@ -349,11 +355,17 @@
             })
         }
         
+        function searchProducts() {
+            const input = document.getElementById("product-search")
+            searchTerm = input ? input.value : ""
+            renderProducts()
+        }
+
         function renderProducts() {
             const grid = document.getElementById('products-grid')
             grid.innerHTML = ''
             
-            const filtered = currentFilter === "All" ? products : products.filter(p => p.type === currentFilter)
+            const filtered = products.filter(p => { const matchCat = currentFilter === "All" || p.type === currentFilter; const term = searchTerm.toLowerCase(); const matchSearch = !term || p.name.toLowerCase().includes(term) || p.description.toLowerCase().includes(term); return matchCat && matchSearch; })
             filtered.forEach(product => {
                 const card = document.createElement('div')
                 card.className = `product-card bg-zinc-900 border border-zinc-800 rounded-3xl overflow-hidden group`
