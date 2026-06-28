@@ -1,0 +1,15 @@
+{
+  "products": [
+    {"id":1,"name":"Signature Heavyweight Tee","price":32,"type":"Apparel","printfulId":"heavyweight-tee","design":"Minimal Geometric"},
+    {"id":2,"name":"Oversized Hoodie","price":68,"type":"Apparel","printfulId":"oversized-hoodie","design":"Vintage Washed"},
+    {"id":3,"name":"Matte Black Mug","price":18,"type":"Drinkware","printfulId":"black-mug","design":"Abstract Lines"},
+    {"id":4,"name":"Premium Poster Print","price":24,"type":"Wall Art","printfulId":"poster","design":"Typographic"},
+    {"id":5,"name":"Eco Tote Bag","price":22,"type":"Accessories","printfulId":"tote-bag","design":"Botanical"},
+    {"id":6,"name":"Dad Cap","price":26,"type":"Headwear","printfulId":"dad-cap","design":"Embroidered Logo"}
+  ],
+  "printful_sync": {
+    "last_sync": "2026-06-28T04:45:00Z",
+    "total_catalog": 508,
+    "synced": 6
+  }
+}

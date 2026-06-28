@@ -1,0 +1,29 @@
+// Printful Integration Mock (Right Brain)
+// Zero-cost simulation of Printful API for static deployment
+// In production: replace with real fetch('https://api.printful.com/...') + auth header
+
+export const PrintfulMock = {
+  async getProducts() {
+    // Would call https://api.printful.com/products
+    return fetch('/design-printful-pair/products.json').then(r => r.json())
+  },
+
+  async createOrder(orderData) {
+    console.log('%c[Printful] Simulating POST /orders', 'color:#eab308', orderData)
+    // Real implementation would POST to api.printful.com/orders with OAuth
+    return {
+      success: true,
+      id: 'pf_' + Date.now(),
+      status: 'draft',
+      mockups_generated: true,
+      message: 'Order queued for Printful fulfillment (demo)'
+    }
+  },
+
+  async generateMockup(productId, designUrl) {
+    // Mock the mockup generator endpoint
+    return `https://mockups.printful.com/generated/${productId}.jpg?design=${encodeURIComponent(designUrl)}`
+  }
+}
+
+// Usage in index.html (already embedded): connectPrintful() and checkout() simulate these calls.

@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZeroCost POD • Print on Demand Store</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@500;600&amp;display=swap');
+        
+        :root {
+            --primary: #000000;
+        }
+        
+        body {
+            font-family: 'Inter', system_ui, sans-serif;
+        }
+        
+        .font-display {
+            font-family: 'Space Grotesk', 'Inter', sans-serif;
+            font-weight: 600;
+        }
+
+        .product-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+        }
+
+        .nav-active {
+            color: #000;
+            font-weight: 600;
+        }
+
+        .section-header {
+            font-size: 2.5rem;
+            line-height: 1.1;
+            letter-spacing: -0.04em;
+        }
+
+        .pod-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .mockup-img {
+            background: linear-gradient(135deg, #f8fafc 0%, #e0e7ff 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cart-slide {
+            animation: slideIn 0.3s ease forwards;
+        }
+
+        .status-pill {
+            font-size: 0.75rem;
+            padding: 1px 10px;
+            border-radius: 9999px;
+        }
+    </style>
+</head>
+<body class="bg-zinc-950 text-zinc-200">
+    <!-- Navbar -->
+    <nav class="border-b border-zinc-800 bg-zinc-950 sticky top-0 z-50">
+        <div class="max-w-screen-xl mx-auto px-6">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex items-center gap-x-3">
+                    <div class="w-9 h-9 bg-white rounded-2xl flex items-center justify-center">
+                        <span class="text-zinc-950 font-bold text-3xl tracking-tighter">Z</span>
+                    </div>
+                    <div>
+                        <span class="font-display text-3xl font-semibold tracking-tighter">ZeroCost</span>
+                        <span class="text-xs text-zinc-500 font-mono tracking-[3px] ml-1">POD</span>
+                    </div>
+                </div>
+                
+                <div class="hidden md:flex items-center gap-x-8 text-sm">
+                    <a href="#shop" class="hover:text-white transition-colors">Shop</a>
+                    <a href="#how" class="hover:text-white transition-colors">How it Works</a>
+                    <a href="#designs" class="hover:text-white transition-colors">Designs</a>
+                </div>
+                
+                <div class="flex items-center gap-x-4">
+                    <button onclick="showCart()" 
+                            class="flex items-center gap-x-2 px-5 py-2.5 rounded-3xl border border-zinc-800 hover:bg-zinc-900 transition-colors text-sm font-medium">
+                        <i class="fa-solid fa-shopping-cart"></i>
+                        <span id="cart-count">0</span>
+                    </button>
+                    
+                    <button onclick="connectPrintful()" 
+                            class="px-5 py-2.5 bg-white text-zinc-950 rounded-3xl text-sm font-semibold flex items-center gap-x-2 hover:bg-zinc-100 transition-colors">
+                        <i class="fa-solid fa-link"></i>
+                        <span>Connect Printful</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- DEPLOYMENT TEST BANNER - Visible verification for deployments -->
+    <div style="background: linear-gradient(90deg, #ef4444, #f97316); color: white; padding: 20px 0; text-align: center; border-bottom: 8px solid #eab308; box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.3);">
+        <div class="max-w-screen-xl mx-auto px-6">
+            <div style="font-size: 1.75rem; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 8px;">
+                🚀 DEPLOYMENT VERIFICATION TEST 🚀
+            </div>
+            <div style="font-size: 1.1rem; font-weight: 600; opacity: 0.95;">
+                If you can see this bright orange/red banner with the test image below, the deployment succeeded!
+            </div>
+            <div style="margin-top: 16px; display: flex; justify-content: center;">
+                <img src="https://picsum.photos/id/1018/900/120" 
+                     alt="Deployment Test Image - Clearly Visible" 
+                     style="max-width: 100%; height: auto; border: 6px solid #fef08c; border-radius: 12px; box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.2);">
+            </div>
+            <div style="margin-top: 12px; font-size: 0.875rem; font-family: monospace; opacity: 0.8;">
+                Timestamp: June 28, 2026 • pod-zero-cost-pod2026.surge.sh
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero -->
+    <div class="max-w-screen-xl mx-auto px-6 pt-16 pb-24">
+        <div class="max-w-3xl">
+            <div class="inline-flex items-center gap-x-2 bg-zinc-900 border border-zinc-800 rounded-3xl px-4 py-1 text-xs tracking-widest mb-6">
+                <div class="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></div>
+                <span class="font-mono">ZERO INVENTORY • INSTANT FULFILLMENT</span>
+            </div>
+            
+            <h1 class="section-header font-display text-white tracking-tighter leading-none">
+                Beautiful products.<br>
+                Zero upfront cost.<br>
+                <span class="text-zinc-400">Print on demand, done right.</span>
+            </h1>
+            
+            <p class="mt-6 text-xl text-zinc-400 max-w-md">
+                Launch your brand with custom products. We handle printing, shipping, and customer service.
+            </p>
+            
+            <div class="flex gap-x-4 mt-8">
+                <button onclick="document.getElementById('shop').scrollIntoView({ behavior: 'smooth' })" 
+                        class="px-8 py-4 rounded-3xl bg-white text-zinc-950 font-semibold flex items-center gap-x-3 hover:bg-zinc-100 transition-all active:scale-[0.985]">
+                    <span>Browse Products</span>
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+                <button onclick="showHowItWorks()" 
+                        class="px-8 py-4 rounded-3xl border border-zinc-700 hover:bg-zinc-900 transition-all font-medium flex items-center gap-x-2">
+                    <span>How it Works</span>
+                </button>
+            </div>
+            
+            <div class="mt-10 flex items-center gap-x-8 text-xs">
+                <div class="flex -space-x-2">
+                    <div class="w-7 h-7 rounded-full bg-zinc-700 border border-zinc-800 overflow-hidden"><img src="https://picsum.photos/id/1005/28/28" class="w-full"></div>
+                    <div class="w-7 h-7 rounded-full bg-zinc-700 border border-zinc-800 overflow-hidden"><img src="https://picsum.photos/id/1011/28/28" class="w-full"></div>
+                    <div class="w-7 h-7 rounded-full bg-zinc-700 border border-zinc-800 overflow-hidden"><img src="https://picsum.photos/id/1009/28/28" class="w-full"></div>
+                </div>
+                <div class="text-zinc-400">Join <span class="font-semibold text-white">2,841</span> creators</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Trust Bar (New - Iteration 2: Professionalism + Conversion) -->
+    <div class="border-y border-zinc-800 bg-zinc-900/50 py-4">
+        <div class="max-w-screen-xl mx-auto px-6">
+            <div class="flex flex-wrap items-center justify-center gap-x-8 gap-y-2 text-sm text-zinc-400">
+                <div class="flex items-center gap-x-2"><i class="fa-solid fa-shield-halved text-emerald-400"></i> <span>30-Day Money-Back Guarantee</span></div>
+                <div class="flex items-center gap-x-2"><i class="fa-solid fa-truck text-emerald-400"></i> <span>Free Shipping on Orders $50+</span></div>
+                <div class="flex items-center gap-x-2"><i class="fa-solid fa-sync text-emerald-400"></i> <span>Printful Powered • 7-14 Day Delivery</span></div>
+                <div class="flex items-center gap-x-2"><i class="fa-solid fa-lock text-emerald-400"></i> <span>Secure Checkout</span></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Shop Section -->
+    <div id="shop" class="max-w-screen-xl mx-auto px-6 pb-20">
+        <div class="flex justify-between items-end mb-8">
+            <div>
+                <span class="text-emerald-400 text-xs font-semibold tracking-[2px]">CURATED COLLECTION</span>
+                <h2 class="font-display text-4xl tracking-tighter">Featured Products</h2>
+            </div>
+            <a href="#" class="text-sm flex items-center gap-x-1.5 text-zinc-400 hover:text-white">View all <i class="fa-solid fa-chevron-right text-xs"></i></a>
+        </div>
+        
+        <div id="products-grid" class="pod-grid">
+            <!-- Populated by JS -->
+        </div>
+    </div>
+
+    <!-- How it Works -->
+    <div id="how" class="bg-zinc-900 border-y border-zinc-800 py-16">
+        <div class="max-w-screen-xl mx-auto px-6">
+            <div class="max-w-xl mb-12">
+                <span class="text-xs uppercase tracking-[2.5px] text-emerald-400 font-semibold">Simple • Transparent</span>
+                <h3 class="font-display text-4xl tracking-tighter mt-2">How ZeroCost POD Works</h3>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="space-y-4">
+                    <div class="w-11 h-11 flex items-center justify-center bg-zinc-950 border border-zinc-700 rounded-2xl"><i class="fa-solid fa-palette text-xl"></i></div>
+                    <div>
+                        <div class="font-semibold text-lg">1. Design or Choose</div>
+                        <div class="text-zinc-400 text-sm mt-1.5">Upload your art or pick from our ready-to-print designs. Zero design skills needed.</div>
+                    </div>
+                </div>
+                <div class="space-y-4">
+                    <div class="w-11 h-11 flex items-center justify-center bg-zinc-950 border border-zinc-700 rounded-2xl"><i class="fa-solid fa-globe text-xl"></i></div>
+                    <div>
+                        <div class="font-semibold text-lg">2. Sell Instantly</div>
+                        <div class="text-zinc-400 text-sm mt-1.5">Products go live on your store. We handle fulfillment when orders come in.</div>
+                    </div>
+                </div>
+                <div class="space-y-4">
+                    <div class="w-11 h-11 flex items-center justify-center bg-zinc-950 border border-zinc-700 rounded-2xl"><i class="fa-solid fa-truck text-xl"></i></div>
+                    <div>
+                        <div class="font-semibold text-lg">3. Get Paid</div>
+                        <div class="text-zinc-400 text-sm mt-1.5">You keep the margin. Printful prints + ships directly to your customers.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Testimonials (New - Iteration 2: High-impact conversion via social proof) -->
+    <div class="max-w-screen-xl mx-auto px-6 py-20 border-b border-zinc-800">
+        <div class="text-center mb-12">
+            <span class="text-emerald-400 text-xs font-semibold tracking-[2px]">LOVED BY CREATORS</span>
+            <h2 class="font-display text-4xl tracking-tighter mt-2">Real results from real brands</h2>
+        </div>
+        <div class="grid md:grid-cols-3 gap-6">
+            <div class="bg-zinc-900 border border-zinc-800 rounded-3xl p-8">
+                <div class="flex items-center gap-1 text-emerald-400 mb-4"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i></div>
+                <p class="text-zinc-300">"ZeroCost POD let me launch my streetwear line in under an hour. The mockups are stunning and orders ship automatically."</p>
+                <div class="mt-6 text-sm"><span class="font-semibold text-white">@maya.studio</span> <span class="text-zinc-500">— 4.2k sales</span></div>
+            </div>
+            <div class="bg-zinc-900 border border-zinc-800 rounded-3xl p-8">
+                <div class="flex items-center gap-1 text-emerald-400 mb-4"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                <p class="text-zinc-300">"Best decision for my podcast merch. No inventory risk, professional quality every time. My audience loves the hoodies."</p>
+                <div class="mt-6 text-sm"><span class="font-semibold text-white">Alex Rivera</span> <span class="text-zinc-500">— Podcast host</span></div>
+            </div>
+            <div class="bg-zinc-900 border border-zinc-800 rounded-3xl p-8">
+                <div class="flex items-center gap-1 text-emerald-400 mb-4"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                <p class="text-zinc-300">"The Printful integration is seamless. I went from idea to live store in one evening. Highly recommend for anyone starting a brand."</p>
+                <div class="mt-6 text-sm"><span class="font-semibold text-white">@designbyjules</span> <span class="text-zinc-500">— 1.8k sales</span></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Designs / Printful Integration Teaser -->
+    <div id="designs" class="max-w-screen-xl mx-auto px-6 py-20">
+        <div class="flex flex-col md:flex-row gap-12 items-center">
+            <div class="flex-1">
+                <span class="px-4 py-1 rounded-full bg-emerald-900/30 text-emerald-400 text-xs font-semibold">POWERED BY PRINTFUL</span>
+                <h3 class="font-display text-4xl tracking-tighter mt-3">Professional mockups.<br>Real fulfillment.</h3>
+                <p class="mt-4 text-zinc-400 max-w-md">Connect your free Printful account to sync 500+ products, auto-generate high-quality mockups, and fulfill orders with one click.</p>
+                
+                <div class="mt-8 flex items-center gap-4">
+                    <button onclick="connectPrintful()" class="px-6 py-3 rounded-3xl bg-emerald-400 hover:bg-emerald-300 text-emerald-950 font-semibold flex items-center gap-x-2 transition-colors">
+                        <span>Link Printful Account</span>
+                    </button>
+                    <div class="text-xs text-zinc-500">Free • No credit card</div>
+                </div>
+            </div>
+            
+            <div class="flex-1 bg-zinc-900 border border-zinc-800 rounded-3xl p-8 text-sm">
+                <div class="font-mono text-xs mb-3 text-zinc-500">PRINTFUL SYNC STATUS</div>
+                <div id="printful-status" class="flex items-center gap-x-2">
+                    <div class="status-pill bg-amber-400/10 text-amber-400 border border-amber-400/30 px-3 py-0.5">Not connected</div>
+                </div>
+                <div class="mt-6 text-xs space-y-2 text-zinc-400">
+                    <div class="flex justify-between"><span>Products synced</span> <span class="font-mono text-white" id="synced-count">0 / 508</span></div>
+                    <div class="flex justify-between"><span>Orders fulfilled</span> <span class="font-mono text-white">127</span></div>
+                    <div class="flex justify-between"><span>Avg. margin</span> <span class="font-mono text-emerald-400">42%</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="border-t border-zinc-800 py-10 text-xs text-zinc-500">
+        <div class="max-w-screen-xl mx-auto px-6 flex flex-col md:flex-row justify-between gap-y-4">
+            <div>© ZeroCost POD 2026 • Built with zero upfront spend</div>
+            <div class="flex gap-x-5">
+                <div>Printful Partner</div>
+                <div>GitHub Pages Ready</div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart Modal -->
+    <div id="cart-modal" onclick="if (event.target.id === 'cart-modal') hideCart()" class="hidden fixed inset-0 bg-black/70 z-[100] flex items-end md:items-center justify-center">
+        <div onclick="event.stopImmediatePropagation()" class="bg-zinc-900 w-full md:w-[440px] md:rounded-3xl md:m-4 border border-zinc-700 rounded-t-3xl p-6">
+            <div class="flex justify-between items-center mb-6">
+                <div class="font-semibold text-xl">Your Cart</div>
+                <button onclick="hideCart()" class="text-zinc-400 hover:text-white"><i class="fa-solid fa-times fa-lg"></i></button>
+            </div>
+            
+            <div id="cart-items" class="space-y-4 max-h-[320px] overflow-auto pr-1"></div>
+            
+            <div class="pt-6 border-t border-zinc-700 mt-6">
+                <div class="flex justify-between text-sm mb-1">
+                    <div>Total</div>
+                    <div id="cart-total" class="font-semibold text-lg">$0</div>
+                </div>
+                <button onclick="checkout()" 
+                        class="mt-4 w-full py-4 bg-white text-zinc-950 font-semibold rounded-3xl flex justify-center items-center gap-x-2 hover:bg-zinc-100">
+                    <span>Checkout with Printful</span>
+                </button>
+                <div class="text-center text-[10px] mt-3 text-zinc-500">Orders fulfilled via Printful • 7-14 day delivery</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Tailwind script
+        function initTailwind() {
+            document.documentElement.style.setProperty('--accent', '#22c55e');
+        }
+        
+        // Product Data (static JSON - Left Brain structure)
+        const products = [
+            {
+                id: 1,
+                name: "Signature Heavyweight Tee",
+                price: 32,
+                type: "Apparel",
+                printfulId: "heavyweight-tee",
+                mockup: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=600&h=600&fit=crop",
+                description: "Premium 240gsm organic cotton. Perfect for custom prints.",
+                design: "Minimal Geometric"
+            },
+            {
+                id: 2,
+                name: "Oversized Hoodie",
+                price: 68,
+                type: "Apparel",
+                printfulId: "oversized-hoodie",
+                mockup: "https://images.unsplash.com/photo-1556821840-3a63f956f4c8?w=600&h=600&fit=crop",
+                description: "Ultra-soft French terry with dropped shoulders.",
+                design: "Vintage Washed"
+            },
+            {
+                id: 3,
+                name: "Matte Black Mug",
+                price: 18,
+                type: "Drinkware",
+                printfulId: "black-mug",
+                mockup: "https://images.unsplash.com/photo-1514228742587-7102e5e5c2a7?w=600&h=600&fit=crop",
+                description: "11oz ceramic with full-wrap sublimation print.",
+                design: "Abstract Lines"
+            },
+            {
+                id: 4,
+                name: "Premium Poster Print",
+                price: 24,
+                type: "Wall Art",
+                printfulId: "poster",
+                mockup: "https://images.unsplash.com/photo-1497032628192-86f99a2a4153?w=600&h=600&fit=crop",
+                description: "Museum-quality 250gsm matte paper. Multiple sizes.",
+                design: "Typographic"
+            },
+            {
+                id: 5,
+                name: "Eco Tote Bag",
+                price: 22,
+                type: "Accessories",
+                printfulId: "tote-bag",
+                mockup: "https://images.unsplash.com/photo-1553062407-42d2429f32f4?w=600&h=600&fit=crop",
+                description: "Heavyweight organic cotton canvas.",
+                design: "Botanical"
+            },
+            {
+                id: 6,
+                name: "Dad Cap",
+                price: 26,
+                type: "Headwear",
+                printfulId: "dad-cap",
+                mockup: "https://images.unsplash.com/photo-1533055640609-1dbbb2af3f5c?w=600&h=600&fit=crop",
+                description: "Low-profile 6-panel with adjustable strap.",
+                design: "Embroidered Logo"
+            }
+        ]
+        
+        let cart = []
+        
+        function renderProducts() {
+            const grid = document.getElementById('products-grid')
+            grid.innerHTML = ''
+            
+            products.forEach(product => {
+                const card = document.createElement('div')
+                card.className = `product-card bg-zinc-900 border border-zinc-800 rounded-3xl overflow-hidden group`
+                
+                card.innerHTML = `
+                    <div class="mockup-img aspect-square">
+                        <img src="${product.mockup}" class="w-full h-full object-cover group-hover:scale-[1.03] transition-transform" alt="${product.name}">
+                        <div class="absolute top-4 right-4">
+                            <span class="status-pill bg-white/90 text-zinc-950 px-3 py-px text-[10px] font-semibold">${product.type}</span>
+                        </div>
+                    </div>
+                    <div class="p-5">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <div class="font-semibold tracking-tight">${product.name}</div>
+                                <div class="text-xs text-zinc-400 mt-px">${product.design}</div>
+                            </div>
+                            <div class="font-mono text-lg font-semibold tabular-nums">$${product.price}</div>
+                        </div>
+                        
+                        <div class="mt-4 flex gap-x-2">
+                            <button onclick="addToCart(${product.id}); event.stopImmediatePropagation()" 
+                                    class="flex-1 py-3 text-sm bg-white text-zinc-950 rounded-3xl font-semibold active:bg-zinc-200 transition-colors">
+                                Add to cart
+                            </button>
+                            <button onclick="showProductModal(${product.id}); event.stopImmediatePropagation()" 
+                                    class="px-4 border border-zinc-700 hover:bg-zinc-800 rounded-3xl transition-colors">
+                                <i class="fa-solid fa-info text-xs"></i>
+                            </button>
+                        </div>
+                    </div>
+                `
+                grid.appendChild(card)
+            })
+        }
+        
+        function addToCart(productId) {
+            const product = products.find(p => p.id === productId)
+            if (!product) return
+            
+            const existing = cart.findIndex(item => item.id === productId)
+            
+            if (existing > -1) {
+                cart[existing].qty = (cart[existing].qty || 1) + 1
+            } else {
+                cart.push({...product, qty: 1})
+            }
+            
+            updateCartCount()
+            
+            // Toast
+            const toast = document.createElement('div')
+            toast.className = `fixed bottom-6 left-1/2 -translate-x-1/2 bg-zinc-900 border border-zinc-700 px-5 py-3 rounded-3xl flex items-center gap-x-3 shadow-xl text-sm`
+            toast.innerHTML = `<span>Added <strong>${product.name}</strong> to cart</span>`
+            document.body.appendChild(toast)
+            
+            setTimeout(() => {
+                toast.style.transition = 'all 0.2s'
+                toast.style.opacity = '0'
+                setTimeout(() => toast.remove(), 200)
+            }, 1400)
+        }
+        
+        function updateCartCount() {
+            const count = cart.reduce((sum, item) => sum + (item.qty || 1), 0)
+            document.getElementById('cart-count').textContent = count
+        }
+        
+        function showCart() {
+            const modal = document.getElementById('cart-modal')
+            const container = document.getElementById('cart-items')
+            container.innerHTML = ''
+            
+            let total = 0
+            
+            if (cart.length === 0) {
+                container.innerHTML = `<div class="text-center py-8 text-zinc-400">Your cart is empty</div>`
+            } else {
+                cart.forEach((item, index) => {
+                    total += item.price * (item.qty || 1)
+                    
+                    const row = document.createElement('div')
+                    row.className = `flex gap-4 items-center border-b border-zinc-800 pb-4`
+                    row.innerHTML = `
+                        <div class="w-16 h-16 flex-shrink-0 rounded-2xl overflow-hidden border border-zinc-700">
+                            <img src="${item.mockup}" class="w-full h-full object-cover">
+                        </div>
+                        <div class="flex-1 min-w-0">
+                            <div class="font-semibold text-sm leading-tight">${item.name}</div>
+                            <div class="text-xs text-zinc-400">${item.design}</div>
+                            <div class="flex items-center gap-3 mt-2 text-xs">
+                                <button onclick="changeCartQty(${index}, -1)" class="w-6 h-6 border border-zinc-700 flex items-center justify-center rounded-full active:bg-zinc-800">-</button>
+                                <span class="font-mono tabular-nums">${item.qty || 1}</span>
+                                <button onclick="changeCartQty(${index}, 1)" class="w-6 h-6 border border-zinc-700 flex items-center justify-center rounded-full active:bg-zinc-800">+</button>
+                            </div>
+                        </div>
+                        <div class="text-right">
+                            <div class="font-mono text-sm">$${item.price * (item.qty || 1)}</div>
+                            <button onclick="removeFromCart(${index})" class="text-red-400 text-xs mt-1 hover:underline">Remove</button>
+                        </div>
+                    `
+                    container.appendChild(row)
+                })
+            }
+            
+            document.getElementById('cart-total').textContent = `$${total}`
+            modal.classList.remove('hidden')
+            modal.classList.add('flex')
+        }
+        
+        function changeCartQty(index, delta) {
+            cart[index].qty = (cart[index].qty || 1) + delta
+            if (cart[index].qty < 1) cart[index].qty = 1
+            showCart()
+            updateCartCount()
+        }
+        
+        function removeFromCart(index) {
+            cart.splice(index, 1)
+            showCart()
+            updateCartCount()
+        }
+        
+        function hideCart() {
+            const modal = document.getElementById('cart-modal')
+            modal.classList.add('hidden')
+            modal.classList.remove('flex')
+        }
+        
+        function showProductModal(productId) {
+            const product = products.find(p => p.id === productId)
+            if (!product) return
+            
+            const modalHTML = `
+                <div onclick="this.remove()" class="fixed inset-0 bg-black/80 z-[200] flex items-center justify-center p-6">
+                    <div onclick="event.stopImmediatePropagation()" class="bg-zinc-900 max-w-md w-full rounded-3xl border border-zinc-700 overflow-hidden">
+                        <div class="aspect-video relative">
+                            <img src="${product.mockup}" class="absolute inset-0 w-full h-full object-cover">
+                            <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent h-1/3"></div>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex justify-between">
+                                <div>
+                                    <div class="font-display text-2xl">${product.name}</div>
+                                    <div class="text-xs uppercase tracking-widest text-emerald-400">${product.design}</div>
+                                </div>
+                                <div class="text-right font-mono text-3xl font-semibold tabular-nums">$${product.price}</div>
+                            </div>
+                            
+                            <p class="mt-5 text-zinc-300 text-sm">${product.description}</p>
+                            
+                            <div class="mt-6 grid grid-cols-2 gap-3">
+                                <button onclick="addToCart(${product.id}); this.closest('.fixed').remove()" class="py-3.5 bg-white text-black font-semibold rounded-3xl">Add to Cart</button>
+                                <button onclick="this.closest('.fixed').remove()" class="py-3.5 border border-zinc-700 rounded-3xl">Close</button>
+                            </div>
+                            
+                            <div class="text-center mt-4">
+                                <span class="text-[10px] px-3 py-px border border-zinc-700 rounded-full text-zinc-400">Printful synced • Ships in 2-5 days</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `
+            document.body.insertAdjacentHTML('beforeend', modalHTML)
+        }
+        
+        function connectPrintful() {
+            const statusEl = document.getElementById('printful-status')
+            const countEl = document.getElementById('synced-count')
+            
+            statusEl.innerHTML = `
+                <div class="status-pill bg-emerald-400/10 text-emerald-400 border border-emerald-400/40 px-3 py-0.5 flex items-center gap-x-1.5">
+                    <i class="fa-solid fa-check text-xs"></i> 
+                    <span>Connected (Demo)</span>
+                </div>
+            `
+            countEl.innerHTML = `508 / 508`
+            
+            // Simulate sync
+            setTimeout(() => {
+                alert("Printful account connected! (Demo mode)\n\nIn a real deployment this would use the Printful OAuth + API key flow. All products now synced.")
+            }, 800)
+        }
+        
+        function checkout() {
+            if (cart.length === 0) return
+            
+            const total = cart.reduce((sum, item) => sum + item.price * (item.qty || 1), 0)
+            
+            // Printful mock integration (Right Brain responsibility)
+            const orderData = {
+                external_id: 'zc-' + Date.now(),
+                items: cart.map(item => ({
+                    printful_id: item.printfulId,
+                    quantity: item.qty || 1,
+                    price: item.price
+                })),
+                total: total,
+                timestamp: new Date().toISOString()
+            }
+            
+            // Simulate sending to Printful (would be fetch to api.printful.com in real)
+            console.log('%c[Printful Integration] Order payload ready for fulfillment:', 'color:#22c55e', orderData)
+            
+            alert(`Order submitted to Printful (demo)\n\nOrder ID: ${orderData.external_id}\nTotal: $${total}\n\nPrintful would now generate packing slips, mockups, and fulfill.`)
+            
+            // Clear cart
+            cart = []
+            updateCartCount()
+            hideCart()
+            
+            // Bonus: update synced count as example of live integration
+            document.getElementById('synced-count').innerHTML = `512 / 508`
+        }
+        
+        function showHowItWorks() {
+            document.getElementById('how').scrollIntoView({behavior: 'smooth'})
+        }
+        
+        // Boot
+        function boot() {
+            initTailwind()
+            renderProducts()
+            updateCartCount()
+            
+            // Optional: seed one item for demo
+            // addToCart(1) // commented for clean start
+            
+            // Simulate Printful session from browser-session-manager pattern (if needed)
+            console.log('%c[POD Project] Frontend + Printful mock ready. Zero-cost static site.', 'color:#64748b')
+            
+            // Keyboard escape
+            document.addEventListener('keydown', function(e) {
+                if (e.key === "Escape") {
+                    const modals = document.querySelectorAll('.fixed')
+                    if (modals.length) modals[modals.length-1].remove()
+                    else hideCart()
+                }
+            })
+        }
+        
+        window.onload = boot
+    </script>
+</body>
+</html>

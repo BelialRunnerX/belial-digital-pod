@@ -1,0 +1,455 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Signature Heavyweight Tee",
+      "price": 32,
+      "type": "Apparel",
+      "printfulId": "heavyweight-tee",
+      "design": "Minimal Geometric",
+      "description": "Premium 220gsm cotton tee with minimalist geometric print. Perfect everyday staple.",
+      "mockupUrl": "https://picsum.photos/id/1005/600/600",
+      "variants": [
+        {
+          "size": "S",
+          "color": "Black"
+        },
+        {
+          "size": "M",
+          "color": "White"
+        },
+        {
+          "size": "L",
+          "color": "Navy"
+        }
+      ],
+      "inStock": true,
+      "printfulVariantId": "10001"
+    },
+    {
+      "id": 2,
+      "name": "Oversized Hoodie",
+      "price": 68,
+      "type": "Apparel",
+      "printfulId": "oversized-hoodie",
+      "design": "Vintage Washed",
+      "description": "Ultra-soft 320gsm fleece hoodie with vintage wash finish and embroidered details.",
+      "mockupUrl": "https://picsum.photos/id/1011/600/600",
+      "variants": [
+        {
+          "size": "M",
+          "color": "Heather Grey"
+        },
+        {
+          "size": "L",
+          "color": "Black"
+        },
+        {
+          "size": "XL",
+          "color": "Forest Green"
+        }
+      ],
+      "inStock": true,
+      "printfulVariantId": "10002"
+    },
+    {
+      "id": 3,
+      "name": "Matte Black Mug",
+      "price": 18,
+      "type": "Drinkware",
+      "printfulId": "black-mug",
+      "design": "Abstract Lines",
+      "description": "11oz ceramic mug with matte black finish and abstract line art design.",
+      "mockupUrl": "https://picsum.photos/id/106/600/600",
+      "variants": [
+        {
+          "size": "11oz",
+          "color": "Matte Black"
+        }
+      ],
+      "inStock": true,
+      "printfulVariantId": "10003"
+    },
+    {
+      "id": 4,
+      "name": "Premium Poster Print",
+      "price": 24,
+      "type": "Wall Art",
+      "printfulId": "poster",
+      "design": "Typographic",
+      "description": "Museum-quality 18x24 inch poster on 300gsm matte paper with bold typographic quote.",
+      "mockupUrl": "https://picsum.photos/id/201/600/600",
+      "variants": [
+        {
+          "size": "18x24",
+          "color": "Matte White"
+        }
+      ],
+      "inStock": true,
+      "printfulVariantId": "10004"
+    },
+    {
+      "id": 5,
+      "name": "Eco Tote Bag",
+      "price": 22,
+      "type": "Accessories",
+      "printfulId": "tote-bag",
+      "design": "Botanical",
+      "description": "Organic cotton canvas tote with botanical illustration print. 15 inch x 16 inch size.",
+      "mockupUrl": "https://picsum.photos/id/251/600/600",
+      "variants": [
+        {
+          "size": "Standard",
+          "color": "Natural"
+        }
+      ],
+      "inStock": false,
+      "printfulVariantId": "10005"
+    },
+    {
+      "id": 6,
+      "name": "Dad Cap",
+      "price": 26,
+      "type": "Headwear",
+      "printfulId": "dad-cap",
+      "design": "Embroidered Logo",
+      "description": "Low-profile dad cap with 3D embroidered logo. Adjustable strap, one size fits most.",
+      "mockupUrl": "https://picsum.photos/id/160/600/600",
+      "variants": [
+        {
+          "size": "One Size",
+          "color": "Navy"
+        },
+        {
+          "size": "One Size",
+          "color": "Black"
+        }
+      ],
+      "inStock": true,
+      "printfulVariantId": "10006"
+    },
+    {
+      "id": 7,
+      "name": "Classic Crewneck Sweatshirt",
+      "price": 48,
+      "type": "Apparel",
+      "printfulId": "crewneck-sweatshirt",
+      "design": "Minimal Logo",
+      "description": "Premium 280gsm fleece crewneck with subtle chest logo embroidery.",
+      "mockupUrl": "https://picsum.photos/id/180/600/600",
+      "variants": [
+        {
+          "size": "S",
+          "color": "Black"
+        },
+        {
+          "size": "M",
+          "color": "Navy"
+        },
+        {
+          "size": "L",
+          "color": "Heather Grey"
+        }
+      ],
+      "inStock": true,
+      "printfulVariantId": "10007"
+    },
+    {
+      "id": 8,
+      "name": "Ceramic Coffee Mug Set",
+      "price": 35,
+      "type": "Drinkware",
+      "printfulId": "mug-set",
+      "design": "Matching Abstract",
+      "description": "Set of two 12oz ceramic mugs with complementary abstract designs.",
+      "mockupUrl": "https://picsum.photos/id/292/600/600",
+      "variants": [
+        {
+          "size": "12oz",
+          "color": "White"
+        },
+        {
+          "size": "12oz",
+          "color": "Black"
+        }
+      ],
+      "inStock": true,
+      "printfulVariantId": "10008"
+    },
+    {
+      "id": 9,
+      "name": "Canvas Wall Art 24x36",
+      "price": 42,
+      "type": "Wall Art",
+      "printfulId": "canvas",
+      "design": "Landscape Minimal",
+      "description": "Gallery-wrapped canvas print on 1.25 inch pine frame. Ready to hang.",
+      "mockupUrl": "https://picsum.photos/id/251/600/600",
+      "variants": [
+        {
+          "size": "24x36",
+          "color": "Full Color"
+        }
+      ],
+      "inStock": true,
+      "printfulVariantId": "10009"
+    },
+    {
+      "id": 10,
+      "name": "Leather Patch Beanie",
+      "price": 28,
+      "type": "Headwear",
+      "printfulId": "beanie",
+      "design": "Woven Patch",
+      "description": "Acrylic knit beanie with premium leather patch. Warm and stylish.",
+      "mockupUrl": "https://picsum.photos/id/201/600/600",
+      "variants": [
+        {
+          "size": "One Size",
+          "color": "Charcoal"
+        },
+        {
+          "size": "One Size",
+          "color": "Olive"
+        }
+      ],
+      "inStock": true,
+      "printfulVariantId": "10010"
+    },
+    {
+      "id": 11,
+      "name": "Fleece Sweatpants",
+      "price": 52,
+      "type": "Apparel",
+      "printfulId": "sweatpants",
+      "design": "Relaxed Fit",
+      "description": "320gsm French terry sweatpants with side pockets and drawstring waist.",
+      "mockupUrl": "https://picsum.photos/id/106/600/600",
+      "variants": [
+        {
+          "size": "S",
+          "color": "Black"
+        },
+        {
+          "size": "M",
+          "color": "Navy"
+        },
+        {
+          "size": "L",
+          "color": "Heather Grey"
+        }
+      ],
+      "inStock": false,
+      "printfulVariantId": "10011"
+    },
+    {
+      "id": 12,
+      "name": "Phone Case - Slim",
+      "price": 19,
+      "type": "Accessories",
+      "printfulId": "phone-case",
+      "design": "Geometric Pattern",
+      "description": "Slim polycarbonate case with raised edges. Compatible with iPhone 15/16 models.",
+      "mockupUrl": "https://picsum.photos/id/160/600/600",
+      "variants": [
+        {
+          "size": "iPhone 15",
+          "color": "Matte Black"
+        },
+        {
+          "size": "iPhone 16",
+          "color": "Clear"
+        }
+      ],
+      "inStock": true,
+      "printfulVariantId": "10012"
+    },
+    {
+      "id": 13,
+      "name": "Linen Throw Pillow",
+      "price": 38,
+      "type": "Home",
+      "printfulId": "pillow",
+      "design": "Minimalist Line",
+      "description": "18x18 inch linen blend pillow with invisible zipper and premium insert included.",
+      "mockupUrl": "https://picsum.photos/id/292/600/600",
+      "variants": [
+        {
+          "size": "18x18",
+          "color": "Natural"
+        },
+        {
+          "size": "18x18",
+          "color": "Charcoal"
+        }
+      ],
+      "inStock": true,
+      "printfulVariantId": "10013"
+    },
+    {
+      "id": 14,
+      "name": "Spiral Notebook - A5",
+      "price": 15,
+      "type": "Accessories",
+      "printfulId": "notebook",
+      "design": "Cover Art",
+      "description": "A5 spiral notebook with 120gsm paper and full-color printed cover. 80 pages.",
+      "mockupUrl": "https://picsum.photos/id/180/600/600",
+      "variants": [
+        {
+          "size": "A5",
+          "color": "Black Cover"
+        },
+        {
+          "size": "A5",
+          "color": "White Cover"
+        }
+      ],
+      "inStock": true,
+      "printfulVariantId": "10014"
+    },
+    {
+      "id": 15,
+      "name": "Water Bottle - 32oz",
+      "price": 29,
+      "type": "Drinkware",
+      "printfulId": "bottle",
+      "design": "Mountain Silhouette",
+      "description": "Double-wall insulated stainless steel bottle keeps drinks cold 24h. BPA-free.",
+      "mockupUrl": "https://picsum.photos/id/251/600/600",
+      "variants": [
+        {
+          "size": "32oz",
+          "color": "Matte Black"
+        },
+        {
+          "size": "32oz",
+          "color": "Navy"
+        }
+      ],
+      "inStock": true,
+      "printfulVariantId": "10015"
+    },
+    {
+      "id": 16,
+      "name": "Hooded Windbreaker",
+      "price": 65,
+      "type": "Apparel",
+      "printfulId": "windbreaker",
+      "design": "Reflective Logo",
+      "description": "Lightweight water-resistant hooded jacket with packable design and reflective accents.",
+      "mockupUrl": "https://picsum.photos/id/201/600/600",
+      "variants": [
+        {
+          "size": "S",
+          "color": "Black"
+        },
+        {
+          "size": "M",
+          "color": "Olive"
+        },
+        {
+          "size": "L",
+          "color": "Navy"
+        }
+      ],
+      "inStock": true,
+      "printfulVariantId": "10016"
+    },
+    {
+      "id": 17,
+      "name": "Framed Art Print Set",
+      "price": 55,
+      "type": "Wall Art",
+      "printfulId": "framed-set",
+      "design": "Triptych Abstract",
+      "description": "Set of three 12x16 inch framed prints with modern abstract designs. Ready to hang.",
+      "mockupUrl": "https://picsum.photos/id/106/600/600",
+      "variants": [
+        {
+          "size": "12x16 (x3)",
+          "color": "Black Frame"
+        }
+      ],
+      "inStock": true,
+      "printfulVariantId": "10017"
+    },
+    {
+      "id": 18,
+      "name": "Knit Scarf",
+      "price": 32,
+      "type": "Accessories",
+      "printfulId": "scarf",
+      "design": "Patterned",
+      "description": "100 percent acrylic knit scarf with subtle geometric pattern. 70 inch long.",
+      "mockupUrl": "https://picsum.photos/id/160/600/600",
+      "variants": [
+        {
+          "size": "One Size",
+          "color": "Grey"
+        },
+        {
+          "size": "One Size",
+          "color": "Burgundy"
+        }
+      ],
+      "inStock": false,
+      "printfulVariantId": "10018"
+    },
+    {
+      "id": 19,
+      "name": "Baseball Cap - Premium",
+      "price": 27,
+      "type": "Headwear",
+      "printfulId": "baseball-cap",
+      "design": "Embroidered Text",
+      "description": "Structured 6-panel cap with curved brim and adjustable back. High-quality embroidery.",
+      "mockupUrl": "https://picsum.photos/id/180/600/600",
+      "variants": [
+        {
+          "size": "One Size",
+          "color": "Black"
+        },
+        {
+          "size": "One Size",
+          "color": "Navy"
+        }
+      ],
+      "inStock": true,
+      "printfulVariantId": "10019"
+    },
+    {
+      "id": 20,
+      "name": "Ceramic Plate Set",
+      "price": 45,
+      "type": "Home",
+      "printfulId": "plate-set",
+      "design": "Minimalist",
+      "description": "Set of four 10 inch dinner plates with minimalist line-art rim design. Dishwasher safe.",
+      "mockupUrl": "https://picsum.photos/id/292/600/600",
+      "variants": [
+        {
+          "size": "10 inch (x4)",
+          "color": "White"
+        }
+      ],
+      "inStock": true,
+      "printfulVariantId": "10020"
+    }
+  ],
+  "categories": [
+    "Apparel",
+    "Drinkware",
+    "Wall Art",
+    "Accessories",
+    "Headwear",
+    "Home"
+  ],
+  "printful_sync": {
+    "last_sync": "2026-06-28T05:00:00Z",
+    "total_catalog": 508,
+    "synced": 20,
+    "categories_synced": 6,
+    "mock_last_updated": "2026-06-28T05:00:00Z"
+  }
+}
