@@ -618,6 +618,19 @@
         async function boot() {
             initTailwind()
             
+            // Simple loading skeleton while fetching
+            const grid = document.getElementById('products-grid')
+            grid.innerHTML = Array.from({length:6}).map(() => `
+                <div class="product-card bg-zinc-900 border border-zinc-800 rounded-3xl overflow-hidden animate-pulse">
+                    <div class="mockup-img aspect-square bg-zinc-800"></div>
+                    <div class="p-5 space-y-3">
+                        <div class="h-4 bg-zinc-800 rounded w-3/4"></div>
+                        <div class="h-3 bg-zinc-800 rounded w-1/2"></div>
+                        <div class="h-9 bg-zinc-800 rounded mt-4"></div>
+                    </div>
+                </div>
+            `).join('')
+            
             // Dynamic product loading from products.json
             try {
                 const res = await fetch('products.json')
