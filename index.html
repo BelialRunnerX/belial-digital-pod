@@ -327,6 +327,10 @@
                         class="mt-4 w-full py-4 bg-white text-zinc-950 font-semibold rounded-3xl flex justify-center items-center gap-x-2 hover:bg-zinc-100">
                     <span>Checkout with Printful</span>
                 </button>
+                <button onclick="showOrderSummary()" 
+                        class="mt-2 w-full py-3 border border-zinc-700 text-sm font-medium rounded-3xl hover:bg-zinc-800">
+                    <span>Checkout</span>
+                </button>
                 <div class="text-center text-[10px] mt-3 text-zinc-500">Orders fulfilled via Printful • 7-14 day delivery</div>
             </div>
         </div>
@@ -662,6 +666,15 @@
                     else hideCart()
                 }
             })
+        function showOrderSummary() {
+            if (cart.length === 0) return;
+            hideCart();
+            const total = cart.reduce((sum, item) => sum + item.price * (item.qty || 1), 0);
+            const itemsHTML = cart.map(item => '<div class="flex justify-between text-sm py-1 border-b border-zinc-800"><div>' + item.name + ' × ' + (item.qty || 1) + '</div><div class="font-mono">$' + (item.price * (item.qty || 1)) + '</div></div>').join('');
+            const modalHTML = '<div onclick="this.remove()" class="fixed inset-0 bg-black/80 z-[200] flex items-center justify-center p-6"><div onclick="event.stopImmediatePropagation()" class="bg-zinc-900 max-w-md w-full rounded-3xl border border-zinc-700 p-6"><div class="font-semibold text-xl mb-4">Order Summary</div><div class="space-y-1 mb-4">' + itemsHTML + '</div><div class="flex justify-between font-semibold text-lg border-t border-zinc-700 pt-3"><div>Total</div><div class="font-mono">$' + total + '</div></div><button onclick="this.closest('.fixed').remove(); alert('Order placed! (demo)'); cart=[]; updateCartCount();" class="mt-6 w-full py-3 bg-white text-zinc-950 font-semibold rounded-3xl">Confirm & Place Order</button><button onclick="this.closest('.fixed').remove(); showCart();" class="mt-2 w-full py-3 border border-zinc-700 rounded-3xl text-sm">Back to Cart</button></div></div>';
+            document.body.insertAdjacentHTML('beforeend', modalHTML);
+        }
+
         }
         
         window.onload = boot
