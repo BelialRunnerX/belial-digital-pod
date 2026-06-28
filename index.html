@@ -324,70 +324,8 @@
             document.documentElement.style.setProperty('--accent', '#22c55e');
         }
         
-        // Product Data (static JSON - Left Brain structure)
-        const products = [
-            {
-                id: 1,
-                name: "Signature Heavyweight Tee",
-                price: 32,
-                type: "Apparel",
-                printfulId: "heavyweight-tee",
-                mockup: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=600&h=600&fit=crop",
-                description: "Premium 240gsm organic cotton. Perfect for custom prints.",
-                design: "Minimal Geometric"
-            },
-            {
-                id: 2,
-                name: "Oversized Hoodie",
-                price: 68,
-                type: "Apparel",
-                printfulId: "oversized-hoodie",
-                mockup: "https://images.unsplash.com/photo-1556821840-3a63f956f4c8?w=600&h=600&fit=crop",
-                description: "Ultra-soft French terry with dropped shoulders.",
-                design: "Vintage Washed"
-            },
-            {
-                id: 3,
-                name: "Matte Black Mug",
-                price: 18,
-                type: "Drinkware",
-                printfulId: "black-mug",
-                mockup: "https://images.unsplash.com/photo-1514228742587-7102e5e5c2a7?w=600&h=600&fit=crop",
-                description: "11oz ceramic with full-wrap sublimation print.",
-                design: "Abstract Lines"
-            },
-            {
-                id: 4,
-                name: "Premium Poster Print",
-                price: 24,
-                type: "Wall Art",
-                printfulId: "poster",
-                mockup: "https://images.unsplash.com/photo-1497032628192-86f99a2a4153?w=600&h=600&fit=crop",
-                description: "Museum-quality 250gsm matte paper. Multiple sizes.",
-                design: "Typographic"
-            },
-            {
-                id: 5,
-                name: "Eco Tote Bag",
-                price: 22,
-                type: "Accessories",
-                printfulId: "tote-bag",
-                mockup: "https://images.unsplash.com/photo-1553062407-42d2429f32f4?w=600&h=600&fit=crop",
-                description: "Heavyweight organic cotton canvas.",
-                design: "Botanical"
-            },
-            {
-                id: 6,
-                name: "Dad Cap",
-                price: 26,
-                type: "Headwear",
-                printfulId: "dad-cap",
-                mockup: "https://images.unsplash.com/photo-1533055640609-1dbbb2af3f5c?w=600&h=600&fit=crop",
-                description: "Low-profile 6-panel with adjustable strap.",
-                design: "Embroidered Logo"
-            }
-        ]
-        
+        // Product Data - dynamically loaded from products.json
+        let products = []
         let cart = []
         
         function renderProducts() {
@@ -614,7 +552,21 @@
         }
         
         // Boot
-        function boot() {
+        async function boot() {
+            initTailwind()
+            
+            // Dynamic product loading from products.json
+            try {
+                const res = await fetch('products.json')
+                if (!res.ok) throw new Error('HTTP ' + res.status)
+                products = await res.json()
+                console.log('%c[Dynamic Load] Loaded ' + products.length + ' products from products.json', 'color:#22c55e')
+            } catch(e) {
+                console.error('Failed to fetch products.json', e)
+                products = []
+            }
+            
+            renderProducts()
             initTailwind()
             renderProducts()
             updateCartCount()
