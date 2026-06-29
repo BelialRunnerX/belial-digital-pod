@@ -220,6 +220,7 @@
             </div>
         </div>
         
+        <div id="product-count" class="text-sm text-zinc-400 mb-4 font-mono"></div>
         <div id="products-grid" class="pod-grid">
             <!-- Populated by JS -->
         </div>
@@ -416,6 +417,10 @@
             if (currentSort === "price-low") filtered.sort((a,b) => a.price - b.price)
             else if (currentSort === "price-high") filtered.sort((a,b) => b.price - a.price)
             else if (currentSort === "name") filtered.sort((a,b) => a.name.localeCompare(b.name))
+            
+            const countEl = document.getElementById('product-count')
+            if (countEl) countEl.textContent = `Showing ${filtered.length} of ${products.length} products`
+            
             filtered.forEach(product => {
                 const card = document.createElement('div')
                 card.className = `product-card bg-zinc-900 border border-zinc-800 rounded-3xl overflow-hidden group`
