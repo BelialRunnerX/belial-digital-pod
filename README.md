@@ -2,7 +2,7 @@
 
 A lightweight, fully static Print-on-Demand (POD) e-commerce site built with vanilla HTML, Tailwind CSS, and JavaScript. Features product browsing, cart functionality, and mock Printful integration.
 
-**Live Demo:** https://pod-zero-cost-pod2026.surge.sh
+**Live Demo:** https://pod-zero-cost-pod2026.GitHub Pages.sh
 
 ## Features
 - Responsive product grid with hover effects
@@ -54,14 +54,14 @@ pod-website-project/
 
 This is a static site. Recommended hosting:
 
-### Surge.sh (current method)
-1. Install Surge:
+### GitHub Pages.sh (current method)
+1. Install GitHub Pages:
    ```bash
-   npm install -g surge
+   npm install -g GitHub Pages
    ```
 2. Deploy:
    ```bash
-   surge . your-subdomain.surge.sh
+   GitHub Pages . your-subdomain.GitHub Pages.sh
    ```
    (See `progress/deploy-log.md` for current live subdomain)
 

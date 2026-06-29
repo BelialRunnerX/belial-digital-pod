@@ -1,59 +1,53 @@
-# POD Website Project - ADJUSTED PLAN (Deploy-First Iterative Strategy)
+# POD Website Project - ADJUSTED PLAN (GitHub-First + Iterative)
 
-**Date:** 2026-06-28
-**Adjustment Reason:** Shift from large phased development to "deploy current working version first, then one feature/function at a time with immediate deployment after each change." This ensures live site is always up-to-date, enables rapid feedback, and follows continuous deployment best practices while maintaining zero-cost static hosting.
+**Date:** 2026-06-29  
+**Current Phase:** GitHub Pages development with faster, larger iterative updates
 
-**Current Working Version State:** Fully functional static POD site (index.html) with:
-- Hero, navigation, 6 products grid
-- LocalStorage cart with add/remove/quantity
-- Printful mock connect + checkout simulation (multi-step modal)
-- Responsive Tailwind UI, modals, product detail views
-- Zero real backend; all client-side JS + mock data
+## Core Principles (Updated)
+- **GitHub First:** Complete the initial substantial build on GitHub Pages before switching to Netlify.
+- **Bigger Changes:** Move beyond tiny atomic tasks. Make larger, meaningful updates while still deploying regularly.
+- **Iterative but Accelerated:** One focused feature/function per update, but with more substantial scope per step.
+- **Deploy After Every Change:** Push to GitHub after each meaningful update.
+- **Real E-commerce Goal:** Build toward a fully functional site (real payment + POD integration) rather than a demo.
+- **Dark Devotion Theme:** All design and product decisions should align with the "Dark Devotion" niche (elegant, melancholic, scholarly, tasteful symbolism).
 
-**New Core Principles:**
-- **Deploy First:** Get v1 live immediately on surge.sh / GitHub Pages / Netlify.
-- **One Change at a Time:** Each update = exactly ONE discrete function or feature (e.g., "add search filter" or "expand to 7 products").
-- **Deploy After Every Change:** After implementing + testing the single change, immediately deploy to live site.
-- **Atomic + Verifiable:** Each step <30min, includes manual verification (open live URL, test the feature).
-- Maintain zero-cost, static-only.
-- Track every deploy in progress/ and a new deploy-log.md
+## Current State
+- Repository: https://github.com/BelialRunnerX/belial-digital-pod
+- Live on GitHub Pages: https://belialrunnerx.github.io/belial-digital-pod/
+- Strong "Dark Devotion" theming applied
+- Dynamic products, filtering, search, sorting, cart, checkout summary, loading states, accessibility improvements
+- Still using mock Printful integration
 
-**Updated Execution Flow:**
-1. **Step 0 (Immediate):** Deploy CURRENT working version to live site (pod-zero-cost-pod2026.surge.sh or equivalent). Verify live.
-2. **Iterative Loop (Repeat):**
-   - Select ONE next feature/function from backlog (prioritized list below, starting with highest impact).
-   - Implement the single change (edit only relevant files, keep changes minimal).
-   - Test locally (browser, no console errors, functional check).
-   - Deploy updated version to live site.
-   - Log the deploy + verification in progress/deploy-log.md
-   - Update this plan with "Deployed: [feature]" note.
-3. **Backlog (Prioritized for one-at-a-time):**
-   - Deploy current (DONE after Step 0)
-   - Add dynamic product loading from products.json (expand catalog gradually, 1-2 products per update)
-   - Add search + category filters
-   - Enhance cart (persistent + totals + animations)
-   - Upgrade checkout to multi-step with validation
-   - Add testimonials / trust badges (one section per update)
-   - Add product detail modal with tabs
-   - Implement Printful connect simulation persistence
-   - Expand catalog to 10, then 15, then 20+ products (batched 2-3 at a time)
-   - Add FAQ, urgency indicators, email capture (one each)
-   - Accessibility / mobile polish items
-   - Deploy prep docs (README-deploy.md) as a dedicated update
-   - Any CRO or analytics features as single additions
+## Execution Flow
+1. Select next substantial feature/function from backlog
+2. Implement (larger scope than before)
+3. Test locally
+4. Commit + push to GitHub (triggers Pages deploy)
+5. Verify live site
+6. Log in `progress/deploy-log.md`
+7. Update this plan
 
-**Deployment Commands (Zero-Cost):**
-- Use existing surge: `/root/deploy-surge.exp` (targets pod-zero-cost-pod2026.surge.sh)
-- Alternative: `surge /root/pod-website-project pod-zero-cost-pod2026.surge.sh`
-- Or GitHub Pages after `git init && push`
-- Always verify: `curl -I https://pod-zero-cost-pod2026.surge.sh` or open in browser.
+## Backlog (Prioritized)
+- Expand catalog significantly (aim for 25+ legitimately designed products)
+- Build real checkout flow with shipping form + validation
+- Add order confirmation / thank you experience
+- Integrate real Printful API (or strong simulation)
+- Add Stripe payment integration (test mode first)
+- Product detail pages or enhanced modals
+- Testimonials / trust signals (substantial section)
+- Email capture + basic marketing features
+- Mobile polish + performance optimization
+- Admin/order viewing stub (optional)
+- Switch to Netlify + connect belialdigital.com (after GitHub build is solid)
 
-**Files to Maintain:**
-- This ADJUSTED-POD-Website-Plan.md (master reference)
-- progress/deploy-log.md (every deploy entry)
-- Existing pair progress files updated after each change
-- index.html + supporting JSON/JS in design-printful-pair/
+## Deployment
+- Use `git push origin master` for all updates
+- GitHub Pages auto-deploys from `master` branch
+- Verify via browser after each push
 
-**Status After Adjustment:** Plan updated. Execution begins with immediate deployment of current working version.
+## Notes
+- Self-improvement tools in `dev-tools/` should be used by all agents
+- All prompts should reference this plan and the "bigger changes, faster iteration" directive
+- Update this document whenever goals or strategy shift
 
-**Next Action (Execution Start):** Run deploy for current version, confirm live site works, then proceed to first incremental update.
+**Last Updated:** 2026-06-29
