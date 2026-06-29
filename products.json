@@ -58,5 +58,205 @@
     "mockup": "https://images.unsplash.com/photo-1533055640609-1dbbb2af3f5c?w=600&h=600&fit=crop",
     "description": "Low-profile 6-panel with adjustable strap.",
     "design": "Embroidered Logo"
+  },
+  {
+    "id": 7,
+    "name": "Crimson Pact Hoodie",
+    "price": 72,
+    "type": "Apparel",
+    "printfulId": "crimson-hoodie",
+    "mockup": "https://images.unsplash.com/photo-1556821840-3a63f956f4c8?w=600&h=600&fit=crop&sat=-30",
+    "description": "Heavyweight fleece with subtle crimson embroidery. For the devoted.",
+    "design": "Crimson Sigil"
+  },
+  {
+    "id": 8,
+    "name": "Obsidian Ritual Tee",
+    "price": 34,
+    "type": "Apparel",
+    "printfulId": "obsidian-tee",
+    "mockup": "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=600&h=600&fit=crop&sat=-40",
+    "description": "Soft ringspun cotton with arcane geometric print.",
+    "design": "Obsidian Geometry"
+  },
+  {
+    "id": 9,
+    "name": "Scholar's Lament Journal",
+    "price": 19,
+    "type": "Stationery",
+    "printfulId": "leather-journal",
+    "mockup": "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=600&h=600&fit=crop",
+    "description": "Premium leather-bound notebook with gilded edges. 240 pages.",
+    "design": "Forgotten Verse"
+  },
+  {
+    "id": 10,
+    "name": "Veiled Moon Ceramic Mug",
+    "price": 21,
+    "type": "Drinkware",
+    "printfulId": "veiled-mug",
+    "mockup": "https://images.unsplash.com/photo-1514228742587-7102e5e5c2a7?w=600&h=600&fit=crop&sat=-20",
+    "description": "Matte black 12oz with full-wrap lunar phase artwork.",
+    "design": "Lunar Phases"
+  },
+  {
+    "id": 11,
+    "name": "Nocturne Canvas Print",
+    "price": 38,
+    "type": "Wall Art",
+    "printfulId": "nocturne-canvas",
+    "mockup": "https://images.unsplash.com/photo-1518709766631-a6a7f45921c3?w=600&h=600&fit=crop",
+    "description": "Gallery-wrapped canvas, dark romantic landscape motif.",
+    "design": "Midnight Reverie"
+  },
+  {
+    "id": 12,
+    "name": "Raven Embroidered Beanie",
+    "price": 28,
+    "type": "Headwear",
+    "printfulId": "raven-beanie",
+    "mockup": "https://images.unsplash.com/photo-1576871337622-98d48d1cf531?w=600&h=600&fit=crop",
+    "description": "Warm knit with subtle raven silhouette embroidery.",
+    "design": "Silent Watcher"
+  },
+  {
+    "id": 13,
+    "name": "Arcane Tome Tote",
+    "price": 24,
+    "type": "Accessories",
+    "printfulId": "arcane-tote",
+    "mockup": "https://images.unsplash.com/photo-1553062407-42d2429f32f4?w=600&h=600&fit=crop&sat=-30",
+    "description": "Heavy canvas tote with printed ancient manuscript details.",
+    "design": "Forbidden Script"
+  },
+  {
+    "id": 14,
+    "name": "Alchemist's Copper Tumbler",
+    "price": 29,
+    "type": "Drinkware",
+    "printfulId": "copper-tumbler",
+    "mockup": "https://images.unsplash.com/photo-1571068316344-75bc76f77890?w=600&h=600&fit=crop",
+    "description": "Insulated 20oz copper-finished tumbler with sigil engraving.",
+    "design": "Transmutation"
+  },
+  {
+    "id": 15,
+    "name": "Eternal Ink Long Sleeve",
+    "price": 42,
+    "type": "Apparel",
+    "printfulId": "long-sleeve",
+    "mockup": "https://images.unsplash.com/photo-1562157873-818bc0726f68?w=600&h=600&fit=crop",
+    "description": "Premium cotton long sleeve with delicate line-art sleeve print.",
+    "design": "Eternal Quill"
+  },
+  {
+    "id": 16,
+    "name": "Melancholy Rose Poster Set",
+    "price": 32,
+    "type": "Wall Art",
+    "printfulId": "rose-poster-set",
+    "mockup": "https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?w=600&h=600&fit=crop",
+    "description": "Set of 3 museum prints featuring wilted roses and poetry.",
+    "design": "Wilted Elegy"
+  },
+  {
+    "id": 17,
+    "name": "Cloaked Figure Crewneck",
+    "price": 55,
+    "type": "Apparel",
+    "printfulId": "crewneck",
+    "mockup": "https://images.unsplash.com/photo-1556821840-3a63f956f4c8?w=600&h=600&fit=crop&sat=-50",
+    "description": "French terry crewneck featuring subtle hooded silhouette.",
+    "design": "The Wanderer"
+  },
+  {
+    "id": 18,
+    "name": "Golden Sigil Enamel Pin Set",
+    "price": 16,
+    "type": "Accessories",
+    "printfulId": "sigil-pins",
+    "mockup": "https://images.unsplash.com/photo-1515562141207-7a88fb7ce45e?w=600&h=600&fit=crop",
+    "description": "Set of 5 hard enamel pins with gold detailing.",
+    "design": "Arcane Icons"
+  },
+  {
+    "id": 19,
+    "name": "Whispered Prayers Notebook",
+    "price": 17,
+    "type": "Stationery",
+    "printfulId": "prayer-notebook",
+    "mockup": "https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=600&h=600&fit=crop",
+    "description": "Softcover journal with gilded page edges and ribbon marker.",
+    "design": "Sacred Whispers"
+  },
+  {
+    "id": 20,
+    "name": "Blackthorn Walking Staff Print",
+    "price": 27,
+    "type": "Wall Art",
+    "printfulId": "blackthorn-print",
+    "mockup": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=600&fit=crop",
+    "description": "Large fine-art giclée print of symbolic staff and runes.",
+    "design": "Thorned Path"
+  },
+  {
+    "id": 21,
+    "name": "Velvet Night Scarf",
+    "price": 31,
+    "type": "Accessories",
+    "printfulId": "velvet-scarf",
+    "mockup": "https://images.unsplash.com/photo-1601924994987-69e26d1543e6?w=600&h=600&fit=crop",
+    "description": "Luxurious modal scarf with subtle repeating pattern.",
+    "design": "Midnight Weave"
+  },
+  {
+    "id": 22,
+    "name": "Dusky Rose Dad Cap",
+    "price": 27,
+    "type": "Headwear",
+    "printfulId": "dusky-cap",
+    "mockup": "https://images.unsplash.com/photo-1533055640609-1dbbb2af3f5c?w=600&h=600&fit=crop&sat=-25",
+    "description": "Premium dad cap with embroidered rose and text detail.",
+    "design": "Dusky Bloom"
+  },
+  {
+    "id": 23,
+    "name": "Pactbreaker Denim Jacket",
+    "price": 85,
+    "type": "Apparel",
+    "printfulId": "denim-jacket",
+    "mockup": "https://images.unsplash.com/photo-1551028719-00167b16eac5?w=600&h=600&fit=crop",
+    "description": "Vintage-wash denim with back patch and subtle inner lining print.",
+    "design": "Broken Oath"
+  },
+  {
+    "id": 24,
+    "name": "Sable Ceramic Espresso Set",
+    "price": 33,
+    "type": "Drinkware",
+    "printfulId": "espresso-set",
+    "mockup": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=600&h=600&fit=crop",
+    "description": "Set of 2 matte black espresso cups with gold rim detail.",
+    "design": "Sable Ritual"
+  },
+  {
+    "id": 25,
+    "name": "Lament of Stars Tapestry",
+    "price": 45,
+    "type": "Wall Art",
+    "printfulId": "stars-tapestry",
+    "mockup": "https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=600&h=600&fit=crop",
+    "description": "Large woven tapestry with celestial and poetic motifs.",
+    "design": "Astral Lament"
+  },
+  {
+    "id": 26,
+    "name": "Inkwell Leather Belt",
+    "price": 39,
+    "type": "Accessories",
+    "printfulId": "leather-belt",
+    "mockup": "https://images.unsplash.com/photo-1553062407-42d2429f32f4?w=600&h=600&fit=crop&sat=-40",
+    "description": "Full-grain leather belt with custom buckle engraving.",
+    "design": "Quill & Ink"
   }
 ]
