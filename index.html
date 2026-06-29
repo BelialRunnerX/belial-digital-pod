@@ -11,35 +11,47 @@
         
         :root {
             --primary: #000000;
+            /* Dark Devotion palette */
+            --bg-deep: #050505;
+            --bg-surface: #0a0a0a;
+            --border-subtle: #1a1a1a;
+            --text-soft: #e8e8e8;
+            --accent-elegant: #3f2a2a;
         }
         
         body {
             font-family: 'Inter', system_ui, sans-serif;
+            background-color: var(--bg-deep);
+            color: var(--text-soft);
         }
         
         .font-display {
             font-family: 'Space Grotesk', 'Inter', sans-serif;
             font-weight: 600;
+            letter-spacing: -0.025em;
         }
 
         .product-card {
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: all 0.2s cubic-bezier(0.23, 1, 0.32, 1);
+            background-color: var(--bg-surface);
+            border: 1px solid var(--border-subtle);
         }
         
         .product-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+            transform: translateY(-6px);
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.25), 0 8px 10px -6px rgb(0 0 0 / 0.15);
+            border-color: #2a2a2a;
         }
 
         .nav-active {
-            color: #000;
+            color: #fff;
             font-weight: 600;
         }
 
         .section-header {
             font-size: 2.5rem;
             line-height: 1.1;
-            letter-spacing: -0.04em;
+            letter-spacing: -0.05em;
         }
 
         .pod-grid {
@@ -56,7 +68,7 @@
         }
 
         .mockup-img {
-            background: linear-gradient(135deg, #f8fafc 0%, #e0e7ff 100%);
+            background: linear-gradient(135deg, #111111 0%, #1a1a1a 100%);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -74,14 +86,19 @@
             border-radius: 9999px;
         }
 
-        /* Keyboard accessibility: visible focus styles */
+        /* Keyboard accessibility: visible focus styles - elegant dark */
         button:focus-visible,
         a:focus-visible,
         input:focus-visible,
         select:focus-visible {
-            outline: 2px solid #22c55e;
+            outline: 2px solid var(--accent-elegant);
             outline-offset: 2px;
-            box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.2);
+            box-shadow: 0 0 0 3px rgba(63, 42, 42, 0.25);
+        }
+
+        /* Subtle elegant touches */
+        .border-zinc-800, .border-zinc-700 {
+            border-color: var(--border-subtle) !important;
         }
     </style>
 </head>
