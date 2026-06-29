@@ -1,0 +1,33 @@
+# Dependencies
+node_modules/
+npm-debug.log*
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Editor/IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Backups and temp files
+*.bak
+*.tmp
+*~
+
+# Build outputs
+dist/
+build/
+.cache/
+
+# Logs
+*.log
+
+# Environment
+.env
+.env.local
+
+# Surge / deploy artifacts (if any)
+.surge/

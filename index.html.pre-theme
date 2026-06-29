@@ -7,136 +7,83 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@500;600&amp;family=Playfair+Display:wght@700&amp;display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@500;600&amp;display=swap');
         
         :root {
             --primary: #000000;
-            /* Stronger Dark Devotion palette - deeper, more luxurious and devotional */
-            --bg-deep: #000000;
-            --bg-surface: #080808;
-            --bg-elevated: #111111;
-            --border-subtle: #1f1f1f;
-            --border-elegant: #2a2a2a;
-            --text-primary: #f5f5f5;
+            /* Dark Devotion palette */
+            --bg-deep: #050505;
+            --bg-surface: #0a0a0a;
+            --border-subtle: #1a1a1a;
             --text-soft: #e8e8e8;
-            --text-muted: #888888;
-            --accent-crimson: #5c2525;
-            --accent-deepred: #3f1f1f;
-            --accent-gold: #a68b5c;
-            --accent-elegant: #4a2a2a;
-            --shadow-dark: 0 25px 50px -12px rgb(0 0 0 / 0.5);
+            --accent-elegant: #3f2a2a;
         }
         
         body {
             font-family: 'Inter', system_ui, sans-serif;
             background-color: var(--bg-deep);
             color: var(--text-soft);
-            line-height: 1.6;
         }
         
         .font-display {
             font-family: 'Space Grotesk', 'Inter', sans-serif;
             font-weight: 600;
-            letter-spacing: -0.03em;
-        }
-        
-        .font-serif {
-            font-family: 'Playfair Display', Georgia, serif;
-            font-weight: 700;
-            letter-spacing: -0.02em;
+            letter-spacing: -0.025em;
         }
 
         .product-card {
-            transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+            transition: all 0.2s cubic-bezier(0.23, 1, 0.32, 1);
             background-color: var(--bg-surface);
             border: 1px solid var(--border-subtle);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .product-card::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: linear-gradient(180deg, rgba(92,37,37,0.03) 0%, transparent 60%);
-            opacity: 0;
-            transition: opacity 0.4s ease;
-            pointer-events: none;
         }
         
         .product-card:hover {
-            transform: translateY(-8px) scale(1.005);
-            box-shadow: var(--shadow-dark), 0 0 0 1px var(--accent-crimson);
-            border-color: var(--accent-crimson);
-        }
-        
-        .product-card:hover::before {
-            opacity: 1;
+            transform: translateY(-6px);
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.25), 0 8px 10px -6px rgb(0 0 0 / 0.15);
+            border-color: #2a2a2a;
         }
 
         .nav-active {
-            color: var(--text-primary);
+            color: #fff;
             font-weight: 600;
-            position: relative;
-        }
-        
-        .nav-active:after {
-            content: '';
-            position: absolute;
-            bottom: -2px;
-            left: 0;
-            width: 100%;
-            height: 1px;
-            background: linear-gradient(to right, var(--accent-crimson), var(--accent-gold));
         }
 
         .section-header {
-            font-size: 2.75rem;
-            line-height: 1.05;
-            letter-spacing: -0.06em;
-            font-weight: 700;
+            font-size: 2.5rem;
+            line-height: 1.1;
+            letter-spacing: -0.05em;
         }
 
         .pod-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 1.75rem;
+            gap: 1.5rem;
         }
 
         @media (max-width: 640px) {
             .pod-grid {
-                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-                gap: 1.25rem;
+                grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+                gap: 1rem;
             }
         }
 
         .mockup-img {
-            background: linear-gradient(135deg, #0a0a0a 0%, #111111 50%, #080808 100%);
+            background: linear-gradient(135deg, #111111 0%, #1a1a1a 100%);
             display: flex;
             align-items: center;
             justify-content: center;
             position: relative;
             overflow: hidden;
-            border: 1px solid var(--border-subtle);
-        }
-        
-        .mockup-img::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: radial-gradient(circle at 50% 30%, rgba(166,139,92,0.06) 0%, transparent 70%);
-            pointer-events: none;
         }
 
         .cart-slide {
-            animation: slideIn 0.4s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+            animation: slideIn 0.3s ease forwards;
         }
 
         .status-pill {
             font-size: 0.75rem;
             padding: 1px 10px;
             border-radius: 9999px;
-            border: 1px solid var(--border-subtle);
         }
 
         /* Keyboard accessibility: visible focus styles - elegant dark */
@@ -144,82 +91,14 @@
         a:focus-visible,
         input:focus-visible,
         select:focus-visible {
-            outline: 2px solid var(--accent-crimson);
+            outline: 2px solid var(--accent-elegant);
             outline-offset: 2px;
-            box-shadow: 0 0 0 4px rgba(92, 37, 37, 0.2);
+            box-shadow: 0 0 0 3px rgba(63, 42, 42, 0.25);
         }
 
-        /* Substantial elegant touches & refinements */
-        .border-zinc-800, .border-zinc-700, .border-zinc-900 {
+        /* Subtle elegant touches */
+        .border-zinc-800, .border-zinc-700 {
             border-color: var(--border-subtle) !important;
-        }
-        
-        .bg-zinc-950, .bg-zinc-900 {
-            background-color: var(--bg-surface) !important;
-        }
-        
-        .text-zinc-200, .text-zinc-400 {
-            color: var(--text-soft) !important;
-        }
-        
-        .text-zinc-500 {
-            color: var(--text-muted) !important;
-        }
-
-        /* Elegant section dividers */
-        .elegant-divider {
-            height: 1px;
-            background: linear-gradient(to right, transparent, var(--border-elegant), transparent);
-            margin: 2rem 0;
-        }
-
-        /* Premium button styles */
-        .btn-elegant {
-            transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .btn-elegant:hover {
-            transform: translateY(-1px);
-            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.3);
-        }
-        
-        .btn-gold {
-            background: linear-gradient(135deg, var(--accent-gold), #8c6642);
-            color: #111;
-            font-weight: 600;
-        }
-        
-        .btn-crimson {
-            background: var(--accent-crimson);
-            color: #fff;
-            border: 1px solid #7a3535;
-        }
-
-        /* Subtle gothic/elegant decorative elements */
-        .devotion-accent {
-            position: relative;
-        }
-        
-        .devotion-accent::after {
-            content: '✦';
-            position: absolute;
-            font-size: 0.6rem;
-            color: var(--accent-gold);
-            opacity: 0.4;
-            top: -0.4em;
-            right: -0.6em;
-        }
-
-        /* Refined typography for key elements */
-        h1, h2, .section-header {
-            font-feature-settings: "tnum", "kern";
-        }
-        
-        .premium-text {
-            font-size: 1.05rem;
-            letter-spacing: -0.01em;
         }
     </style>
 </head>
@@ -229,8 +108,8 @@
         <div class="max-w-screen-xl mx-auto px-6">
             <div class="flex justify-between items-center h-20">
                 <div class="flex items-center gap-x-3">
-                    <div class="w-9 h-9 bg-gradient-to-br from-zinc-800 to-black border border-zinc-700 rounded-2xl flex items-center justify-center">
-                        <span class="font-serif text-white font-bold text-3xl tracking-tighter">Z</span>
+                    <div class="w-9 h-9 bg-white rounded-2xl flex items-center justify-center">
+                        <span class="text-zinc-950 font-bold text-3xl tracking-tighter">Z</span>
                     </div>
                     <div>
                         <span class="font-display text-3xl font-semibold tracking-tighter">ZeroCost</span>
@@ -246,13 +125,13 @@
                 
                 <div class="flex items-center gap-x-4">
                     <button onclick="showCart()" 
-                            class="flex items-center gap-x-2 px-5 py-2.5 rounded-3xl border border-zinc-800 hover:bg-zinc-900 transition-colors text-sm font-medium btn-elegant">
+                            class="flex items-center gap-x-2 px-5 py-2.5 rounded-3xl border border-zinc-800 hover:bg-zinc-900 transition-colors text-sm font-medium">
                         <i class="fa-solid fa-shopping-cart"></i>
                         <span id="cart-count">0</span>
                     </button>
                     
                     <button onclick="connectPrintful()" 
-                            class="px-5 py-2.5 bg-white text-zinc-950 rounded-3xl text-sm font-semibold flex items-center gap-x-2 hover:bg-zinc-100 transition-colors btn-elegant">
+                            class="px-5 py-2.5 bg-white text-zinc-950 rounded-3xl text-sm font-semibold flex items-center gap-x-2 hover:bg-zinc-100 transition-colors">
                         <i class="fa-solid fa-link"></i>
                         <span>Connect Printful</span>
                     </button>
@@ -261,22 +140,22 @@
         </div>
     </nav>
 
-    <!-- DEPLOYMENT TEST BANNER - Themed for Dark Devotion verification -->
-    <div style="background: linear-gradient(90deg, #1a1a1a, #111111); color: #e8e8e8; padding: 18px 0; text-align: center; border-bottom: 4px solid #5c2525; box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.4);">
+    <!-- DEPLOYMENT TEST BANNER - Visible verification for deployments -->
+    <div style="background: linear-gradient(90deg, #ef4444, #f97316); color: white; padding: 20px 0; text-align: center; border-bottom: 8px solid #eab308; box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.3);">
         <div class="max-w-screen-xl mx-auto px-6">
-            <div style="font-size: 1.35rem; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 4px; font-family: 'Playfair Display', serif;">
-                ✦ DARK DEVOTION THEME VERIFIED ✦
+            <div style="font-size: 1.75rem; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 8px;">
+                🚀 DEPLOYMENT VERIFICATION TEST 🚀
             </div>
-            <div style="font-size: 1rem; font-weight: 500; opacity: 0.9;">
-                Stronger dark palette • Crimson &amp; gold accents • Refined elegant typography applied
+            <div style="font-size: 1.1rem; font-weight: 600; opacity: 0.95;">
+                If you can see this bright orange/red banner with the test image below, the deployment succeeded!
             </div>
-            <div style="margin-top: 10px; display: flex; justify-content: center;">
-                <img src="https://picsum.photos/id/1018/900/90" 
-                     alt="Deployment Test Image - Themed verification" 
-                     style="max-width: 100%; height: auto; border: 3px solid #2a2a2a; border-radius: 8px; box-shadow: 0 15px 20px -5px rgb(0 0 0 / 0.3);">
+            <div style="margin-top: 16px; display: flex; justify-content: center;">
+                <img src="https://picsum.photos/id/1018/900/120" 
+                     alt="Deployment Test Image - Clearly Visible" 
+                     style="max-width: 100%; height: auto; border: 6px solid #fef08c; border-radius: 12px; box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.2);">
             </div>
-            <div style="margin-top: 8px; font-size: 0.75rem; font-family: monospace; opacity: 0.7;">
-                Timestamp: June 29, 2026 • pod-zero-cost-pod2026.surge.sh
+            <div style="margin-top: 12px; font-size: 0.875rem; font-family: monospace; opacity: 0.8;">
+                Timestamp: June 28, 2026 • pod-zero-cost-pod2026.surge.sh
             </div>
         </div>
     </div>
@@ -284,7 +163,7 @@
     <!-- Hero -->
     <div class="max-w-screen-xl mx-auto px-6 pt-16 pb-24">
         <div class="max-w-3xl">
-            <div class="inline-flex items-center gap-x-2 bg-zinc-900 border border-zinc-800 rounded-3xl px-4 py-1 text-xs tracking-widest mb-6 devotion-accent">
+            <div class="inline-flex items-center gap-x-2 bg-zinc-900 border border-zinc-800 rounded-3xl px-4 py-1 text-xs tracking-widest mb-6">
                 <div class="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></div>
                 <span class="font-mono">ZERO INVENTORY • INSTANT FULFILLMENT</span>
             </div>
@@ -292,21 +171,21 @@
             <h1 class="section-header font-display text-white tracking-tighter leading-none">
                 Beautiful products.<br>
                 Zero upfront cost.<br>
-                <span class="text-zinc-400 font-serif" style="font-size:0.9em; letter-spacing:-0.02em;">Print on demand, done with devotion.</span>
+                <span class="text-zinc-400">Print on demand, done right.</span>
             </h1>
             
-            <p class="mt-6 text-xl text-zinc-400 max-w-md premium-text">
+            <p class="mt-6 text-xl text-zinc-400 max-w-md">
                 Launch your brand with custom products. We handle printing, shipping, and customer service.
             </p>
             
             <div class="flex gap-x-4 mt-8">
                 <button onclick="document.getElementById('shop').scrollIntoView({ behavior: 'smooth' })" 
-                        class="px-8 py-4 rounded-3xl bg-white text-zinc-950 font-semibold flex items-center gap-x-3 hover:bg-zinc-100 transition-all active:scale-[0.985] btn-elegant">
+                        class="px-8 py-4 rounded-3xl bg-white text-zinc-950 font-semibold flex items-center gap-x-3 hover:bg-zinc-100 transition-all active:scale-[0.985]">
                     <span>Browse Products</span>
                     <i class="fa-solid fa-arrow-right"></i>
                 </button>
                 <button onclick="showHowItWorks()" 
-                        class="px-8 py-4 rounded-3xl border border-zinc-700 hover:bg-zinc-900 transition-all font-medium flex items-center gap-x-2 btn-elegant">
+                        class="px-8 py-4 rounded-3xl border border-zinc-700 hover:bg-zinc-900 transition-all font-medium flex items-center gap-x-2">
                     <span>How it Works</span>
                 </button>
             </div>
