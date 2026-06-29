@@ -980,6 +980,205 @@
             modal.classList.add('hidden')
             modal.classList.remove('flex')
         }
+
+        // Improved checkout helpers with validation + UX
+        function validateShipping() {
+            const required = ['ship-name', 'ship-email', 'ship-address', 'ship-city', 'ship-state', 'ship-zip', 'ship-country'];
+            let valid = true;
+            let firstInvalid = null;
+            required.forEach(id => {
+                const el = document.getElementById(id);
+                if (el) {
+                    el.classList.remove('border-red-500', 'border-emerald-400');
+                    if (!el.value.trim()) {
+                        valid = false;
+                        el.classList.add('border-red-500');
+                        if (!firstInvalid) firstInvalid = el;
+                    } else if (id === 'ship-email' && !el.value.includes('@')) {
+                        valid = false;
+                        el.classList.add('border-red-500');
+                    } else {
+                        el.classList.add('border-emerald-400');
+                    }
+                }
+            });
+            if (firstInvalid) firstInvalid.focus();
+            if (!valid) {
+                const err = document.createElement('div');
+                err.className = 'text-red-400 text-xs mt-2 text-center';
+                err.textContent = '⚠ Please fill all required fields correctly';
+                const form = document.getElementById('shipping-form');
+                if (form && !form.querySelector('.text-red-400')) form.appendChild(err);
+                setTimeout(() => err.remove(), 2500);
+            }
+            return valid;
+        }
+
+        function goToStep(step) {
+            document.querySelectorAll('.checkout-step').forEach(s => s.classList.add('hidden'));
+            document.getElementById('checkout-step-' + step).classList.remove('hidden');
+            // update pills
+            for (let i=1; i<=4; i++) {
+                const pill = document.getElementById('step-pill-' + i);
+                if (pill) {
+                    if (i === step) {
+                        pill.className = 'step-pill cursor-pointer flex items-center gap-x-2 px-3 py-1 rounded-full border border-emerald-400 text-emerald-400';
+                    } else if (i < step) {
+                        pill.className = 'step-pill cursor-pointer flex items-center gap-x-2 px-3 py-1 rounded-full border border-emerald-400/40 text-emerald-400/60';
+                    } else {
+                        pill.className = 'step-pill cursor-pointer flex items-center gap-x-2 px-3 py-1 rounded-full border border-zinc-700 text-zinc-400 hover:text-white';
+                    }
+                }
+            }
+            if (step === 2) populateReview();
+            if (step === 3) {
+                const total = document.getElementById('pay-amount');
+                if (total) total.textContent = document.getElementById('review-total').textContent || '$0';
+            }
+        }
+
+        function populateReview() {
+            // populate from shipping + cart
+            const name = document.getElementById('ship-name').value;
+            const addr = document.getElementById('ship-address').value + ', ' + document.getElementById('ship-city').value + ' ' + document.getElementById('ship-state').value + ' ' + document.getElementById('ship-zip').value;
+            document.getElementById('review-shipping-address').innerHTML = `${name}<br>${addr}<br>${document.getElementById('ship-country').value}`;
+            
+            const itemsList = document.getElementById('review-items-list');
+            itemsList.innerHTML = '';
+            let subtotal = 0;
+            cart.forEach((item, idx) => {
+                const qty = item.qty || 1;
+                const lineTotal = item.price * qty;
+                subtotal += lineTotal;
+                const div = document.createElement('div');
+                div.className = 'flex justify-between items-center text-sm border-b border-zinc-800 pb-2';
+                div.innerHTML = `<div class="flex-1">${item.name} <span class="text-zinc-500">×${qty}</span></div><div class="font-mono">$${lineTotal}</div>`;
+                itemsList.appendChild(div);
+            });
+            const shipping = subtotal > 50 ? 0 : 8;
+            const tax = Math.round(subtotal * 0.08);
+            const total = subtotal + shipping + tax;
+            document.getElementById('review-subtotal').textContent = '$' + subtotal;
+            document.getElementById('review-shipping').textContent = shipping === 0 ? 'FREE' : '$' + shipping;
+            document.getElementById('review-tax').textContent = '$' + tax;
+            document.getElementById('review-total').textContent = '$' + total;
+            document.getElementById('review-item-count').textContent = `${cart.length} ITEMS`;
+        }
+
+        function formatCardNumber(input) {
+            let v = input.value.replace(/\s+/g, '').replace(/[^0-9]/gi, '');
+            let formatted = '';
+            for (let i=0; i<v.length; i++) {
+                if (i>0 && i%4===0) formatted += ' ';
+                formatted += v[i];
+            }
+            input.value = formatted.substring(0,19);
+        }
+        function formatExpiry(input) {
+            let v = input.value.replace(/\s+/g,'').replace(/[^0-9]/gi,'');
+            if (v.length > 2) v = v.substring(0,2) + '/' + v.substring(2,4);
+            input.value = v.substring(0,5);
+        }
+
+        function processPayment() {
+            // Basic payment validation
+            const card = document.getElementById('card-number').value.replace(/\s/g,'');
+            const exp = document.getElementById('card-expiry').value;
+            const cvv = document.getElementById('card-cvv').value;
+            if (card.length < 15 || !exp || cvv.length < 3) {
+                alert('⚠ Please enter valid card details (demo accepts any 15+ digit card)');
+                return;
+            }
+            // Save order to localStorage for My Orders
+            const name = document.getElementById('ship-name').value || 'Guest';
+            const email = document.getElementById('ship-email').value;
+            const addrLine = document.getElementById('ship-address').value + ', ' + document.getElementById('ship-city').value + ', ' + document.getElementById('ship-state').value + ' ' + document.getElementById('ship-zip').value;
+            const subtotal = cart.reduce((s, i) => s + i.price * (i.qty||1), 0);
+            const shipping = subtotal > 50 ? 0 : 8;
+            const tax = Math.round(subtotal * 0.08);
+            const total = subtotal + shipping + tax;
+            const orderId = 'ZC-' + Date.now().toString().slice(-8);
+            const order = {
+                id: orderId,
+                date: new Date().toISOString(),
+                customer: {name, email, address: addrLine},
+                items: cart.map(i => ({name: i.name, qty: i.qty||1, price: i.price})),
+                total,
+                status: 'Processing',
+                tracking: 'TRK' + Math.random().toString(36).slice(2,10).toUpperCase()
+            };
+            let orders = JSON.parse(localStorage.getItem('podOrders') || '[]');
+            orders.unshift(order);
+            localStorage.setItem('podOrders', JSON.stringify(orders));
+            
+            // Show confirmation step
+            document.getElementById('confirm-order-id').textContent = orderId;
+            document.getElementById('confirm-total').textContent = '$' + total;
+            document.getElementById('confirm-shipping-line').innerHTML = `Ship to: ${name} • ${addrLine}`;
+            goToStep(4);
+            
+            // Clear cart after successful "payment"
+            setTimeout(() => {
+                cart = [];
+                saveCart();
+                updateCartCount();
+            }, 800);
+        }
+
+        function viewMyOrders() {
+            hideCheckout();
+            let orders = JSON.parse(localStorage.getItem('podOrders') || '[]');
+            const modalHTML = `
+                <div onclick="this.remove()" class="fixed inset-0 bg-black/90 z-[130] flex items-center justify-center p-4">
+                    <div onclick="event.stopImmediatePropagation()" class="bg-zinc-900 w-full max-w-4xl md:rounded-3xl border border-zinc-700 rounded-3xl overflow-hidden shadow-2xl max-h-[90vh] flex flex-col">
+                        <div class="px-8 py-6 border-b border-zinc-800 flex items-center justify-between bg-zinc-950">
+                            <div>
+                                <div class="font-display text-3xl tracking-tighter">My Orders</div>
+                                <div class="text-xs text-emerald-400 tracking-[3px] mt-0.5">${orders.length} ORDER${orders.length !== 1 ? 'S' : ''} • PRINTFUL SYNCED</div>
+                            </div>
+                            <button onclick="this.closest('.fixed').remove()" class="text-zinc-400 hover:text-white"><i class="fa-solid fa-times fa-lg"></i></button>
+                        </div>
+                        <div class="p-8 overflow-auto flex-1">
+                            ${orders.length === 0 ? `
+                                <div class="text-center py-12">
+                                    <i class="fa-solid fa-box-open text-5xl text-zinc-700 mb-4"></i>
+                                    <div class="text-xl text-zinc-400">No orders yet</div>
+                                    <div class="text-sm mt-2 text-zinc-500">Your completed orders will appear here with tracking info.</div>
+                                </div>
+                            ` : orders.map(o => `
+                                <div class="mb-4 border border-zinc-800 rounded-3xl p-6 bg-zinc-950/70">
+                                    <div class="flex flex-col md:flex-row md:items-center justify-between gap-y-4">
+                                        <div>
+                                            <div class="flex items-center gap-x-3">
+                                                <div class="font-mono text-emerald-400 text-xl font-semibold">${o.id}</div>
+                                                <div class="text-xs px-3 py-1 rounded-full border ${o.status === 'Processing' ? 'border-amber-400 text-amber-400' : 'border-emerald-400 text-emerald-400'}">${o.status}</div>
+                                            </div>
+                                            <div class="text-xs text-zinc-500 mt-1">${new Date(o.date).toLocaleDateString()} • ${o.items.length} items • $${o.total}</div>
+                                        </div>
+                                        <div class="text-right text-sm">
+                                            <div class="text-zinc-400">${o.customer.name}</div>
+                                            <div class="font-mono text-xs text-emerald-400 mt-1">Tracking: ${o.tracking}</div>
+                                        </div>
+                                    </div>
+                                    <div class="mt-4 pt-4 border-t border-zinc-800 text-xs text-zinc-400 grid grid-cols-1 md:grid-cols-3 gap-4">
+                                        <div><span class="text-zinc-500">SHIP TO:</span><br>${o.customer.address}</div>
+                                        <div><span class="text-zinc-500">ITEMS:</span><br>${o.items.map(i => i.name + ' ×' + i.qty).join(', ')}</div>
+                                        <div class="md:text-right"><span class="text-zinc-500">EST. DELIVERY:</span><br>7-12 business days<br><span class="text-emerald-400 cursor-pointer hover:underline" onclick="alert('Tracking link would open Printful dashboard (demo)')">Track Package →</span></div>
+                                    </div>
+                                </div>
+                            `).join('')}
+                        </div>
+                        <div class="p-6 border-t border-zinc-800 text-center text-xs text-zinc-500 bg-zinc-950">Orders fulfilled via Printful • Real-time status synced</div>
+                    </div>
+                </div>
+            `;
+            document.body.insertAdjacentHTML('beforeend', modalHTML);
+        }
+
+        function finishCheckout() {
+            hideCheckout();
+            // optionally show orders
+        }
         
         function placeOrder() {
             const form = document.getElementById('shipping-form')

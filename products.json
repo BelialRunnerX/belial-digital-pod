@@ -448,5 +448,205 @@
     "mockup": "https://images.unsplash.com/photo-1514228742587-7102e5e5c2a7?w=600&h=600&fit=crop&sat=-30",
     "description": "Vintage-style enamel mug with distressed crimson logo.",
     "design": "Campfire Oath"
+  },
+  {
+    "id": 46,
+    "name": "Sacred Ink Notebook",
+    "price": 16,
+    "type": "Stationery",
+    "printfulId": "notebook",
+    "mockup": "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=600&h=600&fit=crop",
+    "description": "Leather journal with gold foil sigil.",
+    "design": "Arcane Script"
+  },
+  {
+    "id": 47,
+    "name": "Wax Seal Kit",
+    "price": 22,
+    "type": "Stationery",
+    "printfulId": "wax-seal",
+    "mockup": "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=600&h=600&fit=crop",
+    "description": "Custom wax seals with family crest.",
+    "design": "Pact Seal"
+  },
+  {
+    "id": 48,
+    "name": "Quill & Ink Set",
+    "price": 29,
+    "type": "Stationery",
+    "printfulId": "quill-set",
+    "mockup": "https://images.unsplash.com/photo-1583485088034-5fbbb3e2e2e2?w=600&h=600&fit=crop",
+    "description": "Vintage writing set with custom nib engraving.",
+    "design": "Scribe"
+  },
+  {
+    "id": 49,
+    "name": "Obsidian Coasters Set",
+    "price": 18,
+    "type": "Home",
+    "printfulId": "coasters",
+    "mockup": "https://images.unsplash.com/photo-1514228742587-7102e5e5c2a7?w=600&h=600&fit=crop",
+    "description": "Set of 4 slate coasters with etched runes.",
+    "design": "Stone Sigil"
+  },
+  {
+    "id": 50,
+    "name": "Velvet Throw Blanket",
+    "price": 48,
+    "type": "Home",
+    "printfulId": "blanket",
+    "mockup": "https://images.unsplash.com/photo-1540932239986-30128078f3c5?w=600&h=600&fit=crop",
+    "description": "Soft velvet throw with subtle all-over pattern.",
+    "design": "Night Veil"
+  },
+  {
+    "id": 51,
+    "name": "Gothic Candle Holder",
+    "price": 24,
+    "type": "Home",
+    "printfulId": "candle-holder",
+    "mockup": "https://images.unsplash.com/photo-1604156788856-2ce5f2171e4d?w=600&h=600&fit=crop",
+    "description": "Cast iron holder with crescent moon motif.",
+    "design": "Lunar Guard"
+  },
+  {
+    "id": 52,
+    "name": "Leather Bound Grimoire",
+    "price": 35,
+    "type": "Stationery",
+    "printfulId": "grimoire",
+    "mockup": "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=600&h=600&fit=crop&sat=-30",
+    "description": "Hand-tooled leather grimoire, 300 pages.",
+    "design": "Forbidden Tome"
+  },
+  {
+    "id": 53,
+    "name": "Embroidered Patch Set",
+    "price": 12,
+    "type": "Accessories",
+    "printfulId": "patches",
+    "mockup": "https://images.unsplash.com/photo-1553062407-42d2429f32f4?w=600&h=600&fit=crop",
+    "description": "Iron-on patches, set of 6 designs.",
+    "design": "Oath Marks"
+  },
+  {
+    "id": 54,
+    "name": "Satin Pajama Set",
+    "price": 42,
+    "type": "Apparel",
+    "printfulId": "pajama",
+    "mockup": "https://images.unsplash.com/photo-1556821840-3a63f956f4c8?w=600&h=600&fit=crop&sat=-20",
+    "description": "Luxury satin PJs with tonal embroidery.",
+    "design": "Dream Pact"
+  },
+  {
+    "id": 55,
+    "name": "Ceramic Incense Holder",
+    "price": 15,
+    "type": "Home",
+    "printfulId": "incense",
+    "mockup": "https://images.unsplash.com/photo-1514228742587-7102e5e5c2a7?w=600&h=600&fit=crop",
+    "description": "Hand-thrown ceramic with drainage.",
+    "design": "Smoke Offering"
+  },
+  {
+    "id": 56,
+    "name": "Wool Scarf with Fringe",
+    "price": 33,
+    "type": "Accessories",
+    "printfulId": "wool-scarf",
+    "mockup": "https://images.unsplash.com/photo-1601924994987-69e26d1543e6?w=600&h=600&fit=crop",
+    "description": "Merino wool scarf, embroidered edge.",
+    "design": "Wanderer"
+  },
+  {
+    "id": 57,
+    "name": "Metal Bookmark Set",
+    "price": 14,
+    "type": "Stationery",
+    "printfulId": "bookmarks",
+    "mockup": "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=600&h=600&fit=crop",
+    "description": "Brass bookmarks with dangling charms.",
+    "design": "Page Keeper"
+  },
+  {
+    "id": 58,
+    "name": "Hooded Cloak Cape",
+    "price": 95,
+    "type": "Apparel",
+    "printfulId": "cloak",
+    "mockup": "https://images.unsplash.com/photo-1556821840-3a63f956f4c8?w=600&h=600&fit=crop&sat=-50",
+    "description": "Heavy wool blend cloak with hood.",
+    "design": "Shadow Mantle"
+  },
+  {
+    "id": 59,
+    "name": "Crystal Pendant Necklace",
+    "price": 27,
+    "type": "Accessories",
+    "printfulId": "pendant",
+    "mockup": "https://images.unsplash.com/photo-1515562141207-7a88fb7ce45e?w=600&h=600&fit=crop",
+    "description": "Quartz on leather cord with engraving.",
+    "design": "Amulet"
+  },
+  {
+    "id": 60,
+    "name": "Leather Journal with Lock",
+    "price": 31,
+    "type": "Stationery",
+    "printfulId": "locked-journal",
+    "mockup": "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=600&h=600&fit=crop",
+    "description": "Secure journal with brass lock and key.",
+    "design": "Secret Keeper"
+  },
+  {
+    "id": 61,
+    "name": "Embroidered Beanie Trio",
+    "price": 39,
+    "type": "Headwear",
+    "printfulId": "beanie-set",
+    "mockup": "https://images.unsplash.com/photo-1576871337622-98d48d1cf531?w=600&h=600&fit=crop",
+    "description": "Set of 3 knit beanies, different sigils.",
+    "design": "Trinity"
+  },
+  {
+    "id": 62,
+    "name": "Tapestry Wall Hanging",
+    "price": 55,
+    "type": "Wall Art",
+    "printfulId": "tapestry-hang",
+    "mockup": "https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=600&h=600&fit=crop",
+    "description": "Large woven hanging, 60x40in.",
+    "design": "Eternal Weave"
+  },
+  {
+    "id": 63,
+    "name": "Suede Choker with Charm",
+    "price": 19,
+    "type": "Accessories",
+    "printfulId": "choker",
+    "mockup": "https://images.unsplash.com/photo-1515562141207-7a88fb7ce45e?w=600&h=600&fit=crop",
+    "description": "Suede with antique brass pendant.",
+    "design": "Bloodline"
+  },
+  {
+    "id": 64,
+    "name": "Fleece Lined Leggings",
+    "price": 36,
+    "type": "Apparel",
+    "printfulId": "leggings",
+    "mockup": "https://images.unsplash.com/photo-1556821840-3a63f956f4c8?w=600&h=600&fit=crop",
+    "description": "High-waisted fleece leggings with print.",
+    "design": "Rune Path"
+  },
+  {
+    "id": 65,
+    "name": "Stoneware Mug Set",
+    "price": 28,
+    "type": "Drinkware",
+    "printfulId": "stoneware-set",
+    "mockup": "https://images.unsplash.com/photo-1514228742587-7102e5e5c2a7?w=600&h=600&fit=crop",
+    "description": "Set of 2 rustic stoneware mugs.",
+    "design": "Earth Pact"
   }
 ]
