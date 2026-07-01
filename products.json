@@ -7,7 +7,36 @@
     "printfulId": "heavyweight-tee",
     "mockup": "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=600&h=600&fit=crop&sat=-30",
     "description": "Heavyweight organic cotton with subtle crimson emblem. For the devoted.",
-    "design": "Minimal Sigil"
+    "design": "Minimal Sigil",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "variants": [
+      {
+        "size": "S",
+        "color": "Default",
+        "stock": 21
+      },
+      {
+        "size": "M",
+        "color": "Default",
+        "stock": 10
+      },
+      {
+        "size": "L",
+        "color": "Default",
+        "stock": 9
+      },
+      {
+        "size": "XL",
+        "color": "Default",
+        "stock": 18
+      }
+    ],
+    "selectedSize": null
   },
   {
     "id": 2,
@@ -17,7 +46,36 @@
     "printfulId": "oversized-hoodie",
     "mockup": "https://images.unsplash.com/photo-1556821840-3a63f956f4c8?w=600&h=600&fit=crop&sat=-40",
     "description": "Ultra-soft French terry with dropped shoulders and arcane geometry.",
-    "design": "Vintage Washed"
+    "design": "Vintage Washed",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "variants": [
+      {
+        "size": "S",
+        "color": "Default",
+        "stock": 5
+      },
+      {
+        "size": "M",
+        "color": "Default",
+        "stock": 21
+      },
+      {
+        "size": "L",
+        "color": "Default",
+        "stock": 16
+      },
+      {
+        "size": "XL",
+        "color": "Default",
+        "stock": 18
+      }
+    ],
+    "selectedSize": null
   },
   {
     "id": 3,
@@ -27,7 +85,36 @@
     "printfulId": "long-sleeve",
     "mockup": "https://images.unsplash.com/photo-1562157873-818bc0726f68?w=600&h=600&fit=crop&sat=-25",
     "description": "Premium cotton long sleeve with delicate line-art sleeve print.",
-    "design": "Eternal Quill"
+    "design": "Eternal Quill",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "variants": [
+      {
+        "size": "S",
+        "color": "Default",
+        "stock": 24
+      },
+      {
+        "size": "M",
+        "color": "Default",
+        "stock": 11
+      },
+      {
+        "size": "L",
+        "color": "Default",
+        "stock": 24
+      },
+      {
+        "size": "XL",
+        "color": "Default",
+        "stock": 14
+      }
+    ],
+    "selectedSize": null
   },
   {
     "id": 4,
@@ -37,7 +124,36 @@
     "printfulId": "crewneck",
     "mockup": "https://images.unsplash.com/photo-1556821840-3a63f956f4c8?w=600&h=600&fit=crop&sat=-50",
     "description": "French terry crewneck featuring subtle hooded silhouette.",
-    "design": "The Wanderer"
+    "design": "The Wanderer",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "variants": [
+      {
+        "size": "S",
+        "color": "Default",
+        "stock": 22
+      },
+      {
+        "size": "M",
+        "color": "Default",
+        "stock": 20
+      },
+      {
+        "size": "L",
+        "color": "Default",
+        "stock": 19
+      },
+      {
+        "size": "XL",
+        "color": "Default",
+        "stock": 19
+      }
+    ],
+    "selectedSize": null
   },
   {
     "id": 5,
@@ -47,7 +163,36 @@
     "printfulId": "denim-jacket",
     "mockup": "https://images.unsplash.com/photo-1551028719-00167b16eac5?w=600&h=600&fit=crop",
     "description": "Vintage-wash denim with back patch and subtle inner lining print.",
-    "design": "Broken Oath"
+    "design": "Broken Oath",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "variants": [
+      {
+        "size": "S",
+        "color": "Default",
+        "stock": 6
+      },
+      {
+        "size": "M",
+        "color": "Default",
+        "stock": 9
+      },
+      {
+        "size": "L",
+        "color": "Default",
+        "stock": 24
+      },
+      {
+        "size": "XL",
+        "color": "Default",
+        "stock": 14
+      }
+    ],
+    "selectedSize": null
   },
   {
     "id": 6,
@@ -57,7 +202,36 @@
     "printfulId": "tank-top",
     "mockup": "https://images.unsplash.com/photo-1503341504253-dff4815485f1?w=600&h=600&fit=crop&sat=-35",
     "description": "Lightweight cotton tank with embroidered raven wing motif.",
-    "design": "Winged Omen"
+    "design": "Winged Omen",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "variants": [
+      {
+        "size": "S",
+        "color": "Default",
+        "stock": 22
+      },
+      {
+        "size": "M",
+        "color": "Default",
+        "stock": 24
+      },
+      {
+        "size": "L",
+        "color": "Default",
+        "stock": 6
+      },
+      {
+        "size": "XL",
+        "color": "Default",
+        "stock": 12
+      }
+    ],
+    "selectedSize": null
   },
   {
     "id": 7,
@@ -67,7 +241,36 @@
     "printfulId": "bomber-jacket",
     "mockup": "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=600&h=600&fit=crop",
     "description": "Satin bomber with all-over sigil print and ribbed cuffs.",
-    "design": "Forbidden Runes"
+    "design": "Forbidden Runes",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "variants": [
+      {
+        "size": "S",
+        "color": "Default",
+        "stock": 7
+      },
+      {
+        "size": "M",
+        "color": "Default",
+        "stock": 23
+      },
+      {
+        "size": "L",
+        "color": "Default",
+        "stock": 5
+      },
+      {
+        "size": "XL",
+        "color": "Default",
+        "stock": 23
+      }
+    ],
+    "selectedSize": null
   },
   {
     "id": 8,
@@ -77,7 +280,36 @@
     "printfulId": "oversized-hoodie",
     "mockup": "https://images.unsplash.com/photo-1556821840-3a63f956f4c8?w=600&h=600&fit=crop&sat=-60",
     "description": "Black-on-black oversized hoodie with tonal embroidery.",
-    "design": "Shadow Pact"
+    "design": "Shadow Pact",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "variants": [
+      {
+        "size": "S",
+        "color": "Default",
+        "stock": 5
+      },
+      {
+        "size": "M",
+        "color": "Default",
+        "stock": 20
+      },
+      {
+        "size": "L",
+        "color": "Default",
+        "stock": 18
+      },
+      {
+        "size": "XL",
+        "color": "Default",
+        "stock": 12
+      }
+    ],
+    "selectedSize": null
   },
   {
     "id": 9,
@@ -87,7 +319,36 @@
     "printfulId": "long-sleeve",
     "mockup": "https://images.unsplash.com/photo-1562157873-818bc0726f68?w=600&h=600&fit=crop&sat=-20",
     "description": "Ringspun cotton with poetic verse printed on sleeve.",
-    "design": "Sacred Lament"
+    "design": "Sacred Lament",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "variants": [
+      {
+        "size": "S",
+        "color": "Default",
+        "stock": 22
+      },
+      {
+        "size": "M",
+        "color": "Default",
+        "stock": 22
+      },
+      {
+        "size": "L",
+        "color": "Default",
+        "stock": 5
+      },
+      {
+        "size": "XL",
+        "color": "Default",
+        "stock": 7
+      }
+    ],
+    "selectedSize": null
   },
   {
     "id": 10,
@@ -97,7 +358,36 @@
     "printfulId": "polo",
     "mockup": "https://images.unsplash.com/photo-1586790170083-2f9ceadcac42?w=600&h=600&fit=crop",
     "description": "Premium polo with embroidered crest on chest.",
-    "design": "Order Crest"
+    "design": "Order Crest",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "variants": [
+      {
+        "size": "S",
+        "color": "Default",
+        "stock": 13
+      },
+      {
+        "size": "M",
+        "color": "Default",
+        "stock": 14
+      },
+      {
+        "size": "L",
+        "color": "Default",
+        "stock": 24
+      },
+      {
+        "size": "XL",
+        "color": "Default",
+        "stock": 15
+      }
+    ],
+    "selectedSize": null
   },
   {
     "id": 11,
@@ -107,7 +397,36 @@
     "printfulId": "sweatpants",
     "mockup": "https://images.unsplash.com/photo-1556821840-3a63f956f4c8?w=600&h=600&fit=crop&sat=-30",
     "description": "Heavy fleece joggers with subtle rose and thorn embroidery.",
-    "design": "Thorned Path"
+    "design": "Thorned Path",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "variants": [
+      {
+        "size": "S",
+        "color": "Default",
+        "stock": 22
+      },
+      {
+        "size": "M",
+        "color": "Default",
+        "stock": 23
+      },
+      {
+        "size": "L",
+        "color": "Default",
+        "stock": 15
+      },
+      {
+        "size": "XL",
+        "color": "Default",
+        "stock": 6
+      }
+    ],
+    "selectedSize": null
   },
   {
     "id": 12,
@@ -117,7 +436,36 @@
     "printfulId": "zip-hoodie",
     "mockup": "https://images.unsplash.com/photo-1556821840-3a63f956f4c8?w=600&h=600&fit=crop&sat=-45",
     "description": "Full-zip heavyweight hoodie with inner sigil lining.",
-    "design": "Devotion Seal"
+    "design": "Devotion Seal",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "variants": [
+      {
+        "size": "S",
+        "color": "Default",
+        "stock": 17
+      },
+      {
+        "size": "M",
+        "color": "Default",
+        "stock": 23
+      },
+      {
+        "size": "L",
+        "color": "Default",
+        "stock": 17
+      },
+      {
+        "size": "XL",
+        "color": "Default",
+        "stock": 21
+      }
+    ],
+    "selectedSize": null
   },
   {
     "id": 13,
@@ -127,7 +475,18 @@
     "printfulId": "black-mug",
     "mockup": "https://images.unsplash.com/photo-1514228742587-7102e5e5c2a7?w=600&h=600&fit=crop&sat=-20",
     "description": "11oz ceramic with full-wrap sublimation print.",
-    "design": "Abstract Lines"
+    "design": "Abstract Lines",
+    "sizes": [
+      "One Size"
+    ],
+    "variants": [
+      {
+        "size": "One Size",
+        "color": "Default",
+        "stock": 50
+      }
+    ],
+    "selectedSize": null
   },
   {
     "id": 14,
@@ -137,7 +496,18 @@
     "printfulId": "veiled-mug",
     "mockup": "https://images.unsplash.com/photo-1514228742587-7102e5e5c2a7?w=600&h=600&fit=crop&sat=-20",
     "description": "Matte black 12oz with full-wrap lunar phase artwork.",
-    "design": "Lunar Phases"
+    "design": "Lunar Phases",
+    "sizes": [
+      "One Size"
+    ],
+    "variants": [
+      {
+        "size": "One Size",
+        "color": "Default",
+        "stock": 50
+      }
+    ],
+    "selectedSize": null
   },
   {
     "id": 15,
@@ -147,7 +517,18 @@
     "printfulId": "copper-tumbler",
     "mockup": "https://images.unsplash.com/photo-1571068316344-75bc76f77890?w=600&h=600&fit=crop",
     "description": "Insulated 20oz copper-finished tumbler with sigil engraving.",
-    "design": "Transmutation"
+    "design": "Transmutation",
+    "sizes": [
+      "One Size"
+    ],
+    "variants": [
+      {
+        "size": "One Size",
+        "color": "Default",
+        "stock": 50
+      }
+    ],
+    "selectedSize": null
   },
   {
     "id": 16,
@@ -157,7 +538,18 @@
     "printfulId": "espresso-set",
     "mockup": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=600&h=600&fit=crop",
     "description": "Set of 2 matte black espresso cups with gold rim detail.",
-    "design": "Sable Ritual"
+    "design": "Sable Ritual",
+    "sizes": [
+      "One Size"
+    ],
+    "variants": [
+      {
+        "size": "One Size",
+        "color": "Default",
+        "stock": 50
+      }
+    ],
+    "selectedSize": null
   },
   {
     "id": 17,
@@ -167,7 +559,18 @@
     "printfulId": "travel-mug",
     "mockup": "https://images.unsplash.com/photo-1514228742587-7102e5e5c2a7?w=600&h=600&fit=crop&sat=-40",
     "description": "Double-wall stainless steel flask with etched runes.",
-    "design": "Eternal Brew"
+    "design": "Eternal Brew",
+    "sizes": [
+      "One Size"
+    ],
+    "variants": [
+      {
+        "size": "One Size",
+        "color": "Default",
+        "stock": 50
+      }
+    ],
+    "selectedSize": null
   },
   {
     "id": 18,
@@ -177,7 +580,18 @@
     "printfulId": "wine-glass",
     "mockup": "https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?w=600&h=600&fit=crop",
     "description": "Set of 2 stemless glasses with delicate rose etching.",
-    "design": "Elegy"
+    "design": "Elegy",
+    "sizes": [
+      "One Size"
+    ],
+    "variants": [
+      {
+        "size": "One Size",
+        "color": "Default",
+        "stock": 50
+      }
+    ],
+    "selectedSize": null
   },
   {
     "id": 19,
@@ -187,7 +601,18 @@
     "printfulId": "poster",
     "mockup": "https://images.unsplash.com/photo-1497032628192-86f99a2a4153?w=600&h=600&fit=crop",
     "description": "Museum-quality 250gsm matte paper. Multiple sizes.",
-    "design": "Typographic"
+    "design": "Typographic",
+    "sizes": [
+      "One Size"
+    ],
+    "variants": [
+      {
+        "size": "One Size",
+        "color": "Default",
+        "stock": 50
+      }
+    ],
+    "selectedSize": null
   },
   {
     "id": 20,
@@ -197,7 +622,18 @@
     "printfulId": "nocturne-canvas",
     "mockup": "https://images.unsplash.com/photo-1518709766631-a6a7f45921c3?w=600&h=600&fit=crop",
     "description": "Gallery-wrapped canvas, dark romantic landscape motif.",
-    "design": "Midnight Reverie"
+    "design": "Midnight Reverie",
+    "sizes": [
+      "One Size"
+    ],
+    "variants": [
+      {
+        "size": "One Size",
+        "color": "Default",
+        "stock": 50
+      }
+    ],
+    "selectedSize": null
   },
   {
     "id": 21,
@@ -207,7 +643,18 @@
     "printfulId": "rose-poster-set",
     "mockup": "https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?w=600&h=600&fit=crop",
     "description": "Set of 3 museum prints featuring wilted roses and poetry.",
-    "design": "Wilted Elegy"
+    "design": "Wilted Elegy",
+    "sizes": [
+      "One Size"
+    ],
+    "variants": [
+      {
+        "size": "One Size",
+        "color": "Default",
+        "stock": 50
+      }
+    ],
+    "selectedSize": null
   },
   {
     "id": 22,
@@ -217,7 +664,18 @@
     "printfulId": "blackthorn-print",
     "mockup": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=600&fit=crop",
     "description": "Large fine-art giclée print of symbolic staff and runes.",
-    "design": "Thorned Path"
+    "design": "Thorned Path",
+    "sizes": [
+      "One Size"
+    ],
+    "variants": [
+      {
+        "size": "One Size",
+        "color": "Default",
+        "stock": 50
+      }
+    ],
+    "selectedSize": null
   },
   {
     "id": 23,
@@ -227,7 +685,18 @@
     "printfulId": "stars-tapestry",
     "mockup": "https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=600&h=600&fit=crop",
     "description": "Large woven tapestry with celestial and poetic motifs.",
-    "design": "Astral Lament"
+    "design": "Astral Lament",
+    "sizes": [
+      "One Size"
+    ],
+    "variants": [
+      {
+        "size": "One Size",
+        "color": "Default",
+        "stock": 50
+      }
+    ],
+    "selectedSize": null
   },
   {
     "id": 24,
@@ -237,7 +706,18 @@
     "printfulId": "framed-print",
     "mockup": "https://images.unsplash.com/photo-1518709766631-a6a7f45921c3?w=600&h=600&fit=crop&sat=-30",
     "description": "Framed fine art print of raven perched on gothic spire.",
-    "design": "Watcher"
+    "design": "Watcher",
+    "sizes": [
+      "One Size"
+    ],
+    "variants": [
+      {
+        "size": "One Size",
+        "color": "Default",
+        "stock": 50
+      }
+    ],
+    "selectedSize": null
   },
   {
     "id": 25,
@@ -247,7 +727,18 @@
     "printfulId": "map-print",
     "mockup": "https://images.unsplash.com/photo-1524661135-423995f22d0b?w=600&h=600&fit=crop",
     "description": "Vintage-style parchment print with hand-drawn occult cartography.",
-    "design": "Forgotten Realms"
+    "design": "Forgotten Realms",
+    "sizes": [
+      "One Size"
+    ],
+    "variants": [
+      {
+        "size": "One Size",
+        "color": "Default",
+        "stock": 50
+      }
+    ],
+    "selectedSize": null
   },
   {
     "id": 26,
@@ -257,7 +748,18 @@
     "printfulId": "tote-bag",
     "mockup": "https://images.unsplash.com/photo-1553062407-42d2429f32f4?w=600&h=600&fit=crop",
     "description": "Heavyweight organic cotton canvas.",
-    "design": "Botanical"
+    "design": "Botanical",
+    "sizes": [
+      "One Size"
+    ],
+    "variants": [
+      {
+        "size": "One Size",
+        "color": "Default",
+        "stock": 50
+      }
+    ],
+    "selectedSize": null
   },
   {
     "id": 27,
@@ -267,7 +769,18 @@
     "printfulId": "arcane-tote",
     "mockup": "https://images.unsplash.com/photo-1553062407-42d2429f32f4?w=600&h=600&fit=crop&sat=-30",
     "description": "Heavy canvas tote with printed ancient manuscript details.",
-    "design": "Forbidden Script"
+    "design": "Forbidden Script",
+    "sizes": [
+      "One Size"
+    ],
+    "variants": [
+      {
+        "size": "One Size",
+        "color": "Default",
+        "stock": 50
+      }
+    ],
+    "selectedSize": null
   },
   {
     "id": 28,
@@ -277,7 +790,18 @@
     "printfulId": "sigil-pins",
     "mockup": "https://images.unsplash.com/photo-1515562141207-7a88fb7ce45e?w=600&h=600&fit=crop",
     "description": "Set of 5 hard enamel pins with gold detailing.",
-    "design": "Arcane Icons"
+    "design": "Arcane Icons",
+    "sizes": [
+      "One Size"
+    ],
+    "variants": [
+      {
+        "size": "One Size",
+        "color": "Default",
+        "stock": 50
+      }
+    ],
+    "selectedSize": null
   },
   {
     "id": 29,
@@ -287,7 +811,18 @@
     "printfulId": "velvet-scarf",
     "mockup": "https://images.unsplash.com/photo-1601924994987-69e26d1543e6?w=600&h=600&fit=crop",
     "description": "Luxurious modal scarf with subtle repeating pattern.",
-    "design": "Midnight Weave"
+    "design": "Midnight Weave",
+    "sizes": [
+      "One Size"
+    ],
+    "variants": [
+      {
+        "size": "One Size",
+        "color": "Default",
+        "stock": 50
+      }
+    ],
+    "selectedSize": null
   },
   {
     "id": 30,
@@ -297,7 +832,18 @@
     "printfulId": "leather-belt",
     "mockup": "https://images.unsplash.com/photo-1553062407-42d2429f32f4?w=600&h=600&fit=crop&sat=-40",
     "description": "Full-grain leather belt with custom buckle engraving.",
-    "design": "Quill & Ink"
+    "design": "Quill & Ink",
+    "sizes": [
+      "One Size"
+    ],
+    "variants": [
+      {
+        "size": "One Size",
+        "color": "Default",
+        "stock": 50
+      }
+    ],
+    "selectedSize": null
   },
   {
     "id": 31,
@@ -307,7 +853,18 @@
     "printfulId": "keychain",
     "mockup": "https://images.unsplash.com/photo-1515562141207-7a88fb7ce45e?w=600&h=600&fit=crop&sat=-25",
     "description": "Brass keychain with detailed raven claw and chain.",
-    "design": "Claw Mark"
+    "design": "Claw Mark",
+    "sizes": [
+      "One Size"
+    ],
+    "variants": [
+      {
+        "size": "One Size",
+        "color": "Default",
+        "stock": 50
+      }
+    ],
+    "selectedSize": null
   },
   {
     "id": 32,
@@ -317,7 +874,18 @@
     "printfulId": "bracelet",
     "mockup": "https://images.unsplash.com/photo-1515562141207-7a88fb7ce45e?w=600&h=600&fit=crop",
     "description": "Beaded bracelet with blood-red stones and cross charm.",
-    "design": "Blood Oath"
+    "design": "Blood Oath",
+    "sizes": [
+      "One Size"
+    ],
+    "variants": [
+      {
+        "size": "One Size",
+        "color": "Default",
+        "stock": 50
+      }
+    ],
+    "selectedSize": null
   },
   {
     "id": 33,
@@ -327,7 +895,18 @@
     "printfulId": "crossbody",
     "mockup": "https://images.unsplash.com/photo-1553062407-42d2429f32f4?w=600&h=600&fit=crop&sat=-35",
     "description": "Waxed canvas crossbody with antique brass hardware.",
-    "design": "Night Courier"
+    "design": "Night Courier",
+    "sizes": [
+      "One Size"
+    ],
+    "variants": [
+      {
+        "size": "One Size",
+        "color": "Default",
+        "stock": 50
+      }
+    ],
+    "selectedSize": null
   },
   {
     "id": 34,
@@ -337,7 +916,18 @@
     "printfulId": "dad-cap",
     "mockup": "https://images.unsplash.com/photo-1533055640609-1dbbb2af3f5c?w=600&h=600&fit=crop",
     "description": "Low-profile 6-panel with adjustable strap.",
-    "design": "Embroidered Logo"
+    "design": "Embroidered Logo",
+    "sizes": [
+      "One Size"
+    ],
+    "variants": [
+      {
+        "size": "One Size",
+        "color": "Default",
+        "stock": 50
+      }
+    ],
+    "selectedSize": null
   },
   {
     "id": 35,
@@ -347,7 +937,18 @@
     "printfulId": "raven-beanie",
     "mockup": "https://images.unsplash.com/photo-1576871337622-98d48d1cf531?w=600&h=600&fit=crop",
     "description": "Warm knit with subtle raven silhouette embroidery.",
-    "design": "Silent Watcher"
+    "design": "Silent Watcher",
+    "sizes": [
+      "One Size"
+    ],
+    "variants": [
+      {
+        "size": "One Size",
+        "color": "Default",
+        "stock": 50
+      }
+    ],
+    "selectedSize": null
   },
   {
     "id": 36,
@@ -357,7 +958,18 @@
     "printfulId": "dusky-cap",
     "mockup": "https://images.unsplash.com/photo-1533055640609-1dbbb2af3f5c?w=600&h=600&fit=crop&sat=-25",
     "description": "Premium dad cap with embroidered rose and text detail.",
-    "design": "Dusky Bloom"
+    "design": "Dusky Bloom",
+    "sizes": [
+      "One Size"
+    ],
+    "variants": [
+      {
+        "size": "One Size",
+        "color": "Default",
+        "stock": 50
+      }
+    ],
+    "selectedSize": null
   },
   {
     "id": 37,
@@ -367,7 +979,18 @@
     "printfulId": "trucker-hat",
     "mockup": "https://images.unsplash.com/photo-1533055640609-1dbbb2af3f5c?w=600&h=600&fit=crop&sat=-40",
     "description": "Mesh-back trucker with embroidered front patch.",
-    "design": "Nocturne"
+    "design": "Nocturne",
+    "sizes": [
+      "One Size"
+    ],
+    "variants": [
+      {
+        "size": "One Size",
+        "color": "Default",
+        "stock": 50
+      }
+    ],
+    "selectedSize": null
   },
   {
     "id": 38,
@@ -377,7 +1000,18 @@
     "printfulId": "leather-journal",
     "mockup": "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=600&h=600&fit=crop",
     "description": "Premium leather-bound notebook with gilded edges. 240 pages.",
-    "design": "Forgotten Verse"
+    "design": "Forgotten Verse",
+    "sizes": [
+      "One Size"
+    ],
+    "variants": [
+      {
+        "size": "One Size",
+        "color": "Default",
+        "stock": 50
+      }
+    ],
+    "selectedSize": null
   },
   {
     "id": 39,
@@ -387,7 +1021,18 @@
     "printfulId": "prayer-notebook",
     "mockup": "https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=600&h=600&fit=crop",
     "description": "Softcover journal with gilded page edges and ribbon marker.",
-    "design": "Sacred Whispers"
+    "design": "Sacred Whispers",
+    "sizes": [
+      "One Size"
+    ],
+    "variants": [
+      {
+        "size": "One Size",
+        "color": "Default",
+        "stock": 50
+      }
+    ],
+    "selectedSize": null
   },
   {
     "id": 40,
@@ -397,7 +1042,18 @@
     "printfulId": "sketchbook",
     "mockup": "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=600&h=600&fit=crop&sat=-15",
     "description": "Hardcover sketchbook with fountain pen friendly paper.",
-    "design": "Quill & Scroll"
+    "design": "Quill & Scroll",
+    "sizes": [
+      "One Size"
+    ],
+    "variants": [
+      {
+        "size": "One Size",
+        "color": "Default",
+        "stock": 50
+      }
+    ],
+    "selectedSize": null
   },
   {
     "id": 41,
@@ -407,7 +1063,18 @@
     "printfulId": "phone-case",
     "mockup": "https://images.unsplash.com/photo-1601784551446-20c9e07cdbdb?w=600&h=600&fit=crop&sat=-50",
     "description": "Matte black snap case with subtle sigil pattern.",
-    "design": "Void Sigil"
+    "design": "Void Sigil",
+    "sizes": [
+      "One Size"
+    ],
+    "variants": [
+      {
+        "size": "One Size",
+        "color": "Default",
+        "stock": 50
+      }
+    ],
+    "selectedSize": null
   },
   {
     "id": 42,
@@ -417,7 +1084,18 @@
     "printfulId": "sticker-pack",
     "mockup": "https://images.unsplash.com/photo-1515562141207-7a88fb7ce45e?w=600&h=600&fit=crop",
     "description": "Set of 10 high-quality vinyl stickers with occult motifs.",
-    "design": "Rune Collection"
+    "design": "Rune Collection",
+    "sizes": [
+      "One Size"
+    ],
+    "variants": [
+      {
+        "size": "One Size",
+        "color": "Default",
+        "stock": 50
+      }
+    ],
+    "selectedSize": null
   },
   {
     "id": 43,
@@ -427,7 +1105,18 @@
     "printfulId": "socks",
     "mockup": "https://images.unsplash.com/photo-1586350977771-b3b0abd50c82?w=600&h=600&fit=crop",
     "description": "Premium combed cotton socks with repeating rose pattern.",
-    "design": "Nightshade Bloom"
+    "design": "Nightshade Bloom",
+    "sizes": [
+      "One Size"
+    ],
+    "variants": [
+      {
+        "size": "One Size",
+        "color": "Default",
+        "stock": 50
+      }
+    ],
+    "selectedSize": null
   },
   {
     "id": 44,
@@ -437,7 +1126,18 @@
     "printfulId": "blanket",
     "mockup": "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=600&h=600&fit=crop&sat=-40",
     "description": "Ultra-soft fleece blanket with all-over celestial map print.",
-    "design": "Astral Map"
+    "design": "Astral Map",
+    "sizes": [
+      "One Size"
+    ],
+    "variants": [
+      {
+        "size": "One Size",
+        "color": "Default",
+        "stock": 50
+      }
+    ],
+    "selectedSize": null
   },
   {
     "id": 45,
@@ -447,7 +1147,18 @@
     "printfulId": "enamel-mug",
     "mockup": "https://images.unsplash.com/photo-1514228742587-7102e5e5c2a7?w=600&h=600&fit=crop&sat=-30",
     "description": "Vintage-style enamel mug with distressed crimson logo.",
-    "design": "Campfire Oath"
+    "design": "Campfire Oath",
+    "sizes": [
+      "One Size"
+    ],
+    "variants": [
+      {
+        "size": "One Size",
+        "color": "Default",
+        "stock": 50
+      }
+    ],
+    "selectedSize": null
   },
   {
     "id": 46,
@@ -457,7 +1168,18 @@
     "printfulId": "notebook",
     "mockup": "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=600&h=600&fit=crop",
     "description": "Leather journal with gold foil sigil.",
-    "design": "Arcane Script"
+    "design": "Arcane Script",
+    "sizes": [
+      "One Size"
+    ],
+    "variants": [
+      {
+        "size": "One Size",
+        "color": "Default",
+        "stock": 50
+      }
+    ],
+    "selectedSize": null
   },
   {
     "id": 47,
@@ -467,7 +1189,18 @@
     "printfulId": "wax-seal",
     "mockup": "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=600&h=600&fit=crop",
     "description": "Custom wax seals with family crest.",
-    "design": "Pact Seal"
+    "design": "Pact Seal",
+    "sizes": [
+      "One Size"
+    ],
+    "variants": [
+      {
+        "size": "One Size",
+        "color": "Default",
+        "stock": 50
+      }
+    ],
+    "selectedSize": null
   },
   {
     "id": 48,
@@ -477,7 +1210,18 @@
     "printfulId": "quill-set",
     "mockup": "https://images.unsplash.com/photo-1583485088034-5fbbb3e2e2e2?w=600&h=600&fit=crop",
     "description": "Vintage writing set with custom nib engraving.",
-    "design": "Scribe"
+    "design": "Scribe",
+    "sizes": [
+      "One Size"
+    ],
+    "variants": [
+      {
+        "size": "One Size",
+        "color": "Default",
+        "stock": 50
+      }
+    ],
+    "selectedSize": null
   },
   {
     "id": 49,
@@ -487,7 +1231,18 @@
     "printfulId": "coasters",
     "mockup": "https://images.unsplash.com/photo-1514228742587-7102e5e5c2a7?w=600&h=600&fit=crop",
     "description": "Set of 4 slate coasters with etched runes.",
-    "design": "Stone Sigil"
+    "design": "Stone Sigil",
+    "sizes": [
+      "One Size"
+    ],
+    "variants": [
+      {
+        "size": "One Size",
+        "color": "Default",
+        "stock": 50
+      }
+    ],
+    "selectedSize": null
   },
   {
     "id": 50,
@@ -497,7 +1252,18 @@
     "printfulId": "blanket",
     "mockup": "https://images.unsplash.com/photo-1540932239986-30128078f3c5?w=600&h=600&fit=crop",
     "description": "Soft velvet throw with subtle all-over pattern.",
-    "design": "Night Veil"
+    "design": "Night Veil",
+    "sizes": [
+      "One Size"
+    ],
+    "variants": [
+      {
+        "size": "One Size",
+        "color": "Default",
+        "stock": 50
+      }
+    ],
+    "selectedSize": null
   },
   {
     "id": 51,
@@ -507,7 +1273,18 @@
     "printfulId": "candle-holder",
     "mockup": "https://images.unsplash.com/photo-1604156788856-2ce5f2171e4d?w=600&h=600&fit=crop",
     "description": "Cast iron holder with crescent moon motif.",
-    "design": "Lunar Guard"
+    "design": "Lunar Guard",
+    "sizes": [
+      "One Size"
+    ],
+    "variants": [
+      {
+        "size": "One Size",
+        "color": "Default",
+        "stock": 50
+      }
+    ],
+    "selectedSize": null
   },
   {
     "id": 52,
@@ -517,7 +1294,18 @@
     "printfulId": "grimoire",
     "mockup": "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=600&h=600&fit=crop&sat=-30",
     "description": "Hand-tooled leather grimoire, 300 pages.",
-    "design": "Forbidden Tome"
+    "design": "Forbidden Tome",
+    "sizes": [
+      "One Size"
+    ],
+    "variants": [
+      {
+        "size": "One Size",
+        "color": "Default",
+        "stock": 50
+      }
+    ],
+    "selectedSize": null
   },
   {
     "id": 53,
@@ -527,7 +1315,18 @@
     "printfulId": "patches",
     "mockup": "https://images.unsplash.com/photo-1553062407-42d2429f32f4?w=600&h=600&fit=crop",
     "description": "Iron-on patches, set of 6 designs.",
-    "design": "Oath Marks"
+    "design": "Oath Marks",
+    "sizes": [
+      "One Size"
+    ],
+    "variants": [
+      {
+        "size": "One Size",
+        "color": "Default",
+        "stock": 50
+      }
+    ],
+    "selectedSize": null
   },
   {
     "id": 54,
@@ -537,7 +1336,36 @@
     "printfulId": "pajama",
     "mockup": "https://images.unsplash.com/photo-1556821840-3a63f956f4c8?w=600&h=600&fit=crop&sat=-20",
     "description": "Luxury satin PJs with tonal embroidery.",
-    "design": "Dream Pact"
+    "design": "Dream Pact",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "variants": [
+      {
+        "size": "S",
+        "color": "Default",
+        "stock": 7
+      },
+      {
+        "size": "M",
+        "color": "Default",
+        "stock": 24
+      },
+      {
+        "size": "L",
+        "color": "Default",
+        "stock": 24
+      },
+      {
+        "size": "XL",
+        "color": "Default",
+        "stock": 22
+      }
+    ],
+    "selectedSize": null
   },
   {
     "id": 55,
@@ -547,7 +1375,18 @@
     "printfulId": "incense",
     "mockup": "https://images.unsplash.com/photo-1514228742587-7102e5e5c2a7?w=600&h=600&fit=crop",
     "description": "Hand-thrown ceramic with drainage.",
-    "design": "Smoke Offering"
+    "design": "Smoke Offering",
+    "sizes": [
+      "One Size"
+    ],
+    "variants": [
+      {
+        "size": "One Size",
+        "color": "Default",
+        "stock": 50
+      }
+    ],
+    "selectedSize": null
   },
   {
     "id": 56,
@@ -557,7 +1396,18 @@
     "printfulId": "wool-scarf",
     "mockup": "https://images.unsplash.com/photo-1601924994987-69e26d1543e6?w=600&h=600&fit=crop",
     "description": "Merino wool scarf, embroidered edge.",
-    "design": "Wanderer"
+    "design": "Wanderer",
+    "sizes": [
+      "One Size"
+    ],
+    "variants": [
+      {
+        "size": "One Size",
+        "color": "Default",
+        "stock": 50
+      }
+    ],
+    "selectedSize": null
   },
   {
     "id": 57,
@@ -567,7 +1417,18 @@
     "printfulId": "bookmarks",
     "mockup": "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=600&h=600&fit=crop",
     "description": "Brass bookmarks with dangling charms.",
-    "design": "Page Keeper"
+    "design": "Page Keeper",
+    "sizes": [
+      "One Size"
+    ],
+    "variants": [
+      {
+        "size": "One Size",
+        "color": "Default",
+        "stock": 50
+      }
+    ],
+    "selectedSize": null
   },
   {
     "id": 58,
@@ -577,7 +1438,36 @@
     "printfulId": "cloak",
     "mockup": "https://images.unsplash.com/photo-1556821840-3a63f956f4c8?w=600&h=600&fit=crop&sat=-50",
     "description": "Heavy wool blend cloak with hood.",
-    "design": "Shadow Mantle"
+    "design": "Shadow Mantle",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "variants": [
+      {
+        "size": "S",
+        "color": "Default",
+        "stock": 20
+      },
+      {
+        "size": "M",
+        "color": "Default",
+        "stock": 8
+      },
+      {
+        "size": "L",
+        "color": "Default",
+        "stock": 23
+      },
+      {
+        "size": "XL",
+        "color": "Default",
+        "stock": 7
+      }
+    ],
+    "selectedSize": null
   },
   {
     "id": 59,
@@ -587,7 +1477,18 @@
     "printfulId": "pendant",
     "mockup": "https://images.unsplash.com/photo-1515562141207-7a88fb7ce45e?w=600&h=600&fit=crop",
     "description": "Quartz on leather cord with engraving.",
-    "design": "Amulet"
+    "design": "Amulet",
+    "sizes": [
+      "One Size"
+    ],
+    "variants": [
+      {
+        "size": "One Size",
+        "color": "Default",
+        "stock": 50
+      }
+    ],
+    "selectedSize": null
   },
   {
     "id": 60,
@@ -597,7 +1498,18 @@
     "printfulId": "locked-journal",
     "mockup": "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=600&h=600&fit=crop",
     "description": "Secure journal with brass lock and key.",
-    "design": "Secret Keeper"
+    "design": "Secret Keeper",
+    "sizes": [
+      "One Size"
+    ],
+    "variants": [
+      {
+        "size": "One Size",
+        "color": "Default",
+        "stock": 50
+      }
+    ],
+    "selectedSize": null
   },
   {
     "id": 61,
@@ -607,7 +1519,18 @@
     "printfulId": "beanie-set",
     "mockup": "https://images.unsplash.com/photo-1576871337622-98d48d1cf531?w=600&h=600&fit=crop",
     "description": "Set of 3 knit beanies, different sigils.",
-    "design": "Trinity"
+    "design": "Trinity",
+    "sizes": [
+      "One Size"
+    ],
+    "variants": [
+      {
+        "size": "One Size",
+        "color": "Default",
+        "stock": 50
+      }
+    ],
+    "selectedSize": null
   },
   {
     "id": 62,
@@ -617,7 +1540,18 @@
     "printfulId": "tapestry-hang",
     "mockup": "https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=600&h=600&fit=crop",
     "description": "Large woven hanging, 60x40in.",
-    "design": "Eternal Weave"
+    "design": "Eternal Weave",
+    "sizes": [
+      "One Size"
+    ],
+    "variants": [
+      {
+        "size": "One Size",
+        "color": "Default",
+        "stock": 50
+      }
+    ],
+    "selectedSize": null
   },
   {
     "id": 63,
@@ -627,7 +1561,18 @@
     "printfulId": "choker",
     "mockup": "https://images.unsplash.com/photo-1515562141207-7a88fb7ce45e?w=600&h=600&fit=crop",
     "description": "Suede with antique brass pendant.",
-    "design": "Bloodline"
+    "design": "Bloodline",
+    "sizes": [
+      "One Size"
+    ],
+    "variants": [
+      {
+        "size": "One Size",
+        "color": "Default",
+        "stock": 50
+      }
+    ],
+    "selectedSize": null
   },
   {
     "id": 64,
@@ -637,7 +1582,36 @@
     "printfulId": "leggings",
     "mockup": "https://images.unsplash.com/photo-1556821840-3a63f956f4c8?w=600&h=600&fit=crop",
     "description": "High-waisted fleece leggings with print.",
-    "design": "Rune Path"
+    "design": "Rune Path",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "variants": [
+      {
+        "size": "S",
+        "color": "Default",
+        "stock": 9
+      },
+      {
+        "size": "M",
+        "color": "Default",
+        "stock": 17
+      },
+      {
+        "size": "L",
+        "color": "Default",
+        "stock": 22
+      },
+      {
+        "size": "XL",
+        "color": "Default",
+        "stock": 24
+      }
+    ],
+    "selectedSize": null
   },
   {
     "id": 65,
@@ -647,7 +1621,18 @@
     "printfulId": "stoneware-set",
     "mockup": "https://images.unsplash.com/photo-1514228742587-7102e5e5c2a7?w=600&h=600&fit=crop",
     "description": "Set of 2 rustic stoneware mugs.",
-    "design": "Earth Pact"
+    "design": "Earth Pact",
+    "sizes": [
+      "One Size"
+    ],
+    "variants": [
+      {
+        "size": "One Size",
+        "color": "Default",
+        "stock": 50
+      }
+    ],
+    "selectedSize": null
   },
   {
     "id": 66,
@@ -657,7 +1642,36 @@
     "printfulId": "poncho",
     "mockup": "https://images.unsplash.com/photo-1551028719-00167b16eac5?w=600&h=600&fit=crop&sat=-45",
     "description": "Wool-blend poncho with hidden sigil lining and dramatic hood.",
-    "design": "Veiled Path"
+    "design": "Veiled Path",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "variants": [
+      {
+        "size": "S",
+        "color": "Default",
+        "stock": 13
+      },
+      {
+        "size": "M",
+        "color": "Default",
+        "stock": 19
+      },
+      {
+        "size": "L",
+        "color": "Default",
+        "stock": 9
+      },
+      {
+        "size": "XL",
+        "color": "Default",
+        "stock": 8
+      }
+    ],
+    "selectedSize": null
   },
   {
     "id": 67,
@@ -667,7 +1681,36 @@
     "printfulId": "button-up",
     "mockup": "https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?w=600&h=600&fit=crop&sat=-30",
     "description": "Premium oxford with subtle repeating quill and ink pattern.",
-    "design": "Scholar's Mark"
+    "design": "Scholar's Mark",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "variants": [
+      {
+        "size": "S",
+        "color": "Default",
+        "stock": 15
+      },
+      {
+        "size": "M",
+        "color": "Default",
+        "stock": 8
+      },
+      {
+        "size": "L",
+        "color": "Default",
+        "stock": 21
+      },
+      {
+        "size": "XL",
+        "color": "Default",
+        "stock": 22
+      }
+    ],
+    "selectedSize": null
   },
   {
     "id": 68,
@@ -677,7 +1720,36 @@
     "printfulId": "leather-jacket",
     "mockup": "https://images.unsplash.com/photo-1551028719-00167b16eac5?w=600&h=600&fit=crop&sat=-50",
     "description": "Vintage leather with embossed thorn and rose detailing.",
-    "design": "Crown of Thorns"
+    "design": "Crown of Thorns",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "variants": [
+      {
+        "size": "S",
+        "color": "Default",
+        "stock": 12
+      },
+      {
+        "size": "M",
+        "color": "Default",
+        "stock": 7
+      },
+      {
+        "size": "L",
+        "color": "Default",
+        "stock": 17
+      },
+      {
+        "size": "XL",
+        "color": "Default",
+        "stock": 16
+      }
+    ],
+    "selectedSize": null
   },
   {
     "id": 69,
@@ -687,7 +1759,36 @@
     "printfulId": "blouse",
     "mockup": "https://images.unsplash.com/photo-1485968579580-b6d095142e6e?w=600&h=600&fit=crop&sat=-25",
     "description": "Delicate lace blouse with tonal black-on-black embroidery.",
-    "design": "Lace Requiem"
+    "design": "Lace Requiem",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "variants": [
+      {
+        "size": "S",
+        "color": "Default",
+        "stock": 20
+      },
+      {
+        "size": "M",
+        "color": "Default",
+        "stock": 23
+      },
+      {
+        "size": "L",
+        "color": "Default",
+        "stock": 11
+      },
+      {
+        "size": "XL",
+        "color": "Default",
+        "stock": 21
+      }
+    ],
+    "selectedSize": null
   },
   {
     "id": 70,
@@ -697,7 +1798,36 @@
     "printfulId": "turtleneck",
     "mockup": "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=600&h=600&fit=crop&sat=-35",
     "description": "Fine knit turtleneck with chest sigil accent.",
-    "design": "Silent Oath"
+    "design": "Silent Oath",
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "variants": [
+      {
+        "size": "S",
+        "color": "Default",
+        "stock": 13
+      },
+      {
+        "size": "M",
+        "color": "Default",
+        "stock": 19
+      },
+      {
+        "size": "L",
+        "color": "Default",
+        "stock": 12
+      },
+      {
+        "size": "XL",
+        "color": "Default",
+        "stock": 8
+      }
+    ],
+    "selectedSize": null
   },
   {
     "id": 71,
@@ -707,7 +1837,18 @@
     "printfulId": "necklace",
     "mockup": "https://images.unsplash.com/photo-1515562141207-7a88fb7ce45e?w=600&h=600&fit=crop&sat=-20",
     "description": "Sterling silver crescent with engraved arcane symbol.",
-    "design": "Lunar Pact"
+    "design": "Lunar Pact",
+    "sizes": [
+      "One Size"
+    ],
+    "variants": [
+      {
+        "size": "One Size",
+        "color": "Default",
+        "stock": 50
+      }
+    ],
+    "selectedSize": null
   },
   {
     "id": 72,
@@ -717,7 +1858,18 @@
     "printfulId": "pendant",
     "mockup": "https://images.unsplash.com/photo-1515562141207-7a88fb7ce45e?w=600&h=600&fit=crop&sat=-30",
     "description": "Oxidized brass raven skull on black cord.",
-    "design": "Omen Keeper"
+    "design": "Omen Keeper",
+    "sizes": [
+      "One Size"
+    ],
+    "variants": [
+      {
+        "size": "One Size",
+        "color": "Default",
+        "stock": 50
+      }
+    ],
+    "selectedSize": null
   },
   {
     "id": 73,
@@ -727,7 +1879,18 @@
     "printfulId": "ring",
     "mockup": "https://images.unsplash.com/photo-1515562141207-7a88fb7ce45e?w=600&h=600&fit=crop&sat=-15",
     "description": "Antique-style signet with genuine bloodstone and crest engraving.",
-    "design": "Bloodline Seal"
+    "design": "Bloodline Seal",
+    "sizes": [
+      "One Size"
+    ],
+    "variants": [
+      {
+        "size": "One Size",
+        "color": "Default",
+        "stock": 50
+      }
+    ],
+    "selectedSize": null
   },
   {
     "id": 74,
@@ -737,7 +1900,18 @@
     "printfulId": "bracelet",
     "mockup": "https://images.unsplash.com/photo-1515562141207-7a88fb7ce45e?w=600&h=600&fit=crop&sat=-25",
     "description": "Twisted sterling cuff with delicate thorn motif.",
-    "design": "Eternal Bind"
+    "design": "Eternal Bind",
+    "sizes": [
+      "One Size"
+    ],
+    "variants": [
+      {
+        "size": "One Size",
+        "color": "Default",
+        "stock": 50
+      }
+    ],
+    "selectedSize": null
   },
   {
     "id": 75,
@@ -747,7 +1921,18 @@
     "printfulId": "bookends",
     "mockup": "https://images.unsplash.com/photo-1540932239986-30128078f3c5?w=600&h=600&fit=crop&sat=-40",
     "description": "Pair of polished obsidian bookends with subtle rune etchings.",
-    "design": "Foundation Stones"
+    "design": "Foundation Stones",
+    "sizes": [
+      "One Size"
+    ],
+    "variants": [
+      {
+        "size": "One Size",
+        "color": "Default",
+        "stock": 50
+      }
+    ],
+    "selectedSize": null
   },
   {
     "id": 76,
@@ -757,7 +1942,18 @@
     "printfulId": "pillow",
     "mockup": "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=600&h=600&fit=crop&sat=-30",
     "description": "Luxury velvet pillow with embroidered wilted rose and text.",
-    "design": "Mourning Bloom"
+    "design": "Mourning Bloom",
+    "sizes": [
+      "One Size"
+    ],
+    "variants": [
+      {
+        "size": "One Size",
+        "color": "Default",
+        "stock": 50
+      }
+    ],
+    "selectedSize": null
   },
   {
     "id": 77,
@@ -767,7 +1963,18 @@
     "printfulId": "candles",
     "mockup": "https://images.unsplash.com/photo-1602874801006-e1c2a3e4e8e5?w=600&h=600&fit=crop&sat=-35",
     "description": "Set of 3 hand-poured black beeswax candles with gold foil labels.",
-    "design": "Vigil Flames"
+    "design": "Vigil Flames",
+    "sizes": [
+      "One Size"
+    ],
+    "variants": [
+      {
+        "size": "One Size",
+        "color": "Default",
+        "stock": 50
+      }
+    ],
+    "selectedSize": null
   },
   {
     "id": 78,
@@ -777,7 +1984,18 @@
     "printfulId": "lantern",
     "mockup": "https://images.unsplash.com/photo-1513506003901-1e6a229e2d15?w=600&h=600&fit=crop&sat=-40",
     "description": "Cast iron lantern-style lamp with stained glass panels.",
-    "design": "Eternal Light"
+    "design": "Eternal Light",
+    "sizes": [
+      "One Size"
+    ],
+    "variants": [
+      {
+        "size": "One Size",
+        "color": "Default",
+        "stock": 50
+      }
+    ],
+    "selectedSize": null
   },
   {
     "id": 79,
@@ -787,7 +2005,18 @@
     "printfulId": "grimoire",
     "mockup": "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=600&h=600&fit=crop&sat=-20",
     "description": "Hand-bound full-grain leather grimoire with 300 pages and lock clasp.",
-    "design": "Arcane Codex"
+    "design": "Arcane Codex",
+    "sizes": [
+      "One Size"
+    ],
+    "variants": [
+      {
+        "size": "One Size",
+        "color": "Default",
+        "stock": 50
+      }
+    ],
+    "selectedSize": null
   },
   {
     "id": 80,
@@ -797,7 +2026,18 @@
     "printfulId": "pen-set",
     "mockup": "https://images.unsplash.com/photo-1583485088034-5f4f3f4f3e3e?w=600&h=600&fit=crop&sat=-15",
     "description": "Vintage-style fountain pen with custom ink in obsidian black.",
-    "design": "Sacred Script"
+    "design": "Sacred Script",
+    "sizes": [
+      "One Size"
+    ],
+    "variants": [
+      {
+        "size": "One Size",
+        "color": "Default",
+        "stock": 50
+      }
+    ],
+    "selectedSize": null
   },
   {
     "id": 81,
@@ -807,7 +2047,18 @@
     "printfulId": "wax-seal",
     "mockup": "https://images.unsplash.com/photo-1515377905703-c4788e7e6b2a?w=600&h=600&fit=crop&sat=-25",
     "description": "Brass seal stamp with custom sigil and sealing wax sticks.",
-    "design": "Pact Sealer"
+    "design": "Pact Sealer",
+    "sizes": [
+      "One Size"
+    ],
+    "variants": [
+      {
+        "size": "One Size",
+        "color": "Default",
+        "stock": 50
+      }
+    ],
+    "selectedSize": null
   },
   {
     "id": 82,
@@ -817,7 +2068,18 @@
     "printfulId": "duffle",
     "mockup": "https://images.unsplash.com/photo-1553062407-42d2429f32f4?w=600&h=600&fit=crop&sat=-35",
     "description": "Rugged waxed canvas duffle with leather handles and sigil patch.",
-    "design": "Pilgrim's Burden"
+    "design": "Pilgrim's Burden",
+    "sizes": [
+      "One Size"
+    ],
+    "variants": [
+      {
+        "size": "One Size",
+        "color": "Default",
+        "stock": 50
+      }
+    ],
+    "selectedSize": null
   },
   {
     "id": 83,
@@ -827,7 +2089,18 @@
     "printfulId": "clutch",
     "mockup": "https://images.unsplash.com/photo-1553062407-42d2429f32f4?w=600&h=600&fit=crop&sat=-20",
     "description": "Black velvet clutch with antique brass frame and chain.",
-    "design": "Midnight Affair"
+    "design": "Midnight Affair",
+    "sizes": [
+      "One Size"
+    ],
+    "variants": [
+      {
+        "size": "One Size",
+        "color": "Default",
+        "stock": 50
+      }
+    ],
+    "selectedSize": null
   },
   {
     "id": 84,
@@ -837,7 +2110,18 @@
     "printfulId": "wallet",
     "mockup": "https://images.unsplash.com/photo-1553062407-42d2429f32f4?w=600&h=600&fit=crop&sat=-40",
     "description": "Full-grain bifold wallet with hidden pocket and embossed runes.",
-    "design": "Hidden Truths"
+    "design": "Hidden Truths",
+    "sizes": [
+      "One Size"
+    ],
+    "variants": [
+      {
+        "size": "One Size",
+        "color": "Default",
+        "stock": 50
+      }
+    ],
+    "selectedSize": null
   },
   {
     "id": 85,
@@ -847,7 +2131,18 @@
     "printfulId": "chalice",
     "mockup": "https://images.unsplash.com/photo-1514228742587-7102e5e5c2a7?w=600&h=600&fit=crop&sat=-30",
     "description": "Pewter chalice with engraved blood oath inscription.",
-    "design": "Sacred Vessel"
+    "design": "Sacred Vessel",
+    "sizes": [
+      "One Size"
+    ],
+    "variants": [
+      {
+        "size": "One Size",
+        "color": "Default",
+        "stock": 50
+      }
+    ],
+    "selectedSize": null
   },
   {
     "id": 86,
@@ -857,7 +2152,18 @@
     "printfulId": "absinthe-glass",
     "mockup": "https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?w=600&h=600&fit=crop&sat=-25",
     "description": "Set of 2 hand-blown absinthe glasses with spoon rests.",
-    "design": "Green Fairy"
+    "design": "Green Fairy",
+    "sizes": [
+      "One Size"
+    ],
+    "variants": [
+      {
+        "size": "One Size",
+        "color": "Default",
+        "stock": 50
+      }
+    ],
+    "selectedSize": null
   },
   {
     "id": 87,
@@ -867,7 +2173,18 @@
     "printfulId": "etching",
     "mockup": "https://images.unsplash.com/photo-1518709766631-a6a7f45921c3?w=600&h=600&fit=crop&sat=-35",
     "description": "Limited edition fine art etching of moonlit cathedral spires.",
-    "design": "Night Cathedral"
+    "design": "Night Cathedral",
+    "sizes": [
+      "One Size"
+    ],
+    "variants": [
+      {
+        "size": "One Size",
+        "color": "Default",
+        "stock": 50
+      }
+    ],
+    "selectedSize": null
   },
   {
     "id": 88,
@@ -877,6 +2194,17 @@
     "printfulId": "triptych",
     "mockup": "https://images.unsplash.com/photo-1497032628192-86f99a2a4153?w=600&h=600&fit=crop&sat=-20",
     "description": "Three-panel canvas print of stylized devotional icons.",
-    "design": "Saints & Sinners"
+    "design": "Saints & Sinners",
+    "sizes": [
+      "One Size"
+    ],
+    "variants": [
+      {
+        "size": "One Size",
+        "color": "Default",
+        "stock": 50
+      }
+    ],
+    "selectedSize": null
   }
 ]
