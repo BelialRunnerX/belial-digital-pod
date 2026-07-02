@@ -147,7 +147,85 @@
             pointer-events: none;
         }
 
-        .cart-slide {
+        /* HIGH-CONVERSION URGENCY & SCARCITY STYLES */
+        .urgency-badge {
+            background: linear-gradient(135deg, #b91c1c, #991b1b);
+            color: white;
+            font-size: 10px;
+            font-weight: 700;
+            padding: 2px 8px;
+            border-radius: 9999px;
+            letter-spacing: 0.5px;
+            box-shadow: 0 0 0 1px rgba(185,28,28,0.3);
+            animation: pulse-urgency 2s infinite ease-in-out;
+        }
+        
+        .scarcity-text {
+            color: #f87171;
+            font-size: 11px;
+            font-weight: 600;
+        }
+        
+        .countdown-timer {
+            background: #1f2937;
+            border: 1px solid #ef4444;
+            color: #fca5a5;
+            font-family: 'Space Grotesk', monospace;
+            font-size: 11px;
+            padding: 4px 10px;
+            border-radius: 9999px;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            box-shadow: 0 0 8px rgba(239, 68, 68, 0.2);
+        }
+        
+        .countdown-timer .time {
+            font-weight: 700;
+            color: #f87171;
+        }
+        
+        .low-stock-warning {
+            color: #ef4444;
+            font-weight: 600;
+            font-size: 12px;
+        }
+        
+        .checkout-urgency {
+            background: #450a0a;
+            border: 1px solid #b91c1c;
+            color: #fecaca;
+            padding: 8px 14px;
+            border-radius: 12px;
+            font-size: 13px;
+            margin: 8px 0;
+        }
+        
+        .social-proof {
+            font-size: 11px;
+            color: #a3a3a3;
+        }
+        
+        @keyframes pulse-urgency {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.85; transform: scale(1.02); }
+        }
+        
+        .stock-bar {
+            height: 4px;
+            background: #27251f;
+            border-radius: 999px;
+            overflow: hidden;
+            margin-top: 6px;
+        }
+        
+        .stock-bar-fill {
+            height: 100%;
+            background: linear-gradient(to right, #b91c1c, #ef4444);
+            transition: width 0.4s ease;
+        }
+
+    </style>
             animation: slideIn 0.4s cubic-bezier(0.23, 1, 0.32, 1) forwards;
         }
 
