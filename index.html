@@ -984,12 +984,33 @@
                 const card = document.createElement('div')
                 card.className = `product-card bg-zinc-900 border border-zinc-800 rounded-3xl overflow-hidden group`
                 
+                // Compute scarcity data from variants
+                let minStock = 99
+                if (product.variants && product.variants.length > 0) {
+                    product.variants.forEach(v => { minStock = Math.min(minStock, v.stock || 50) })
+                } else {
+                    minStock = Math.floor(Math.random() * 12) + 4
+                }
+                const isLowStock = minStock < 15
+                const urgencyLevel = minStock < 8 ? 'CRITICAL' : (minStock < 15 ? 'LOW' : 'LIMITED')
+                
+                // Fake but realistic countdown ( ~2h varying by product)
+                const endTime = Date.now() + (2 * 60 * 60 * 1000) + (product.id * 13000)
+                
                 card.innerHTML = `
                     <div class="mockup-img aspect-square">
                         <img src="${product.mockup}" loading="lazy" class="w-full h-full object-cover group-hover:scale-[1.03] transition-transform" alt="${product.name}">
-                        <div class="absolute top-4 right-4">
+                        <div class="absolute top-4 right-4 flex flex-col gap-1.5 items-end">
                             <span class="status-pill bg-white/90 text-zinc-950 px-3 py-px text-[10px] font-semibold">${product.type}</span>
+                            ${isLowStock ? `<span class="urgency-badge px-2.5 py-0.5 text-[9px] flex items-center gap-1"><i class="fa-solid fa-bolt text-[8px]"></i> ONLY ${minStock} LEFT</span>` : ''}
                         </div>
+                        ${isLowStock ? `
+                        <div class="absolute bottom-3 left-3">
+                            <div class="countdown-timer" data-end="${endTime}">
+                                <i class="fa-regular fa-clock text-xs"></i>
+                                <span class="time">1:59:59</span>
+                            </div>
+                        </div>` : ''}
                     </div>
                     <div class="p-5">
                         <div class="flex justify-between items-start">
@@ -999,6 +1020,16 @@
                             </div>
                             <div class="font-mono text-lg font-semibold tabular-nums">$${product.price}</div>
                         </div>
+                        
+                        <div class="mt-3 flex items-center justify-between text-xs">
+                            <div class="${isLowStock ? 'scarcity-text' : 'text-emerald-400/80'} font-medium flex items-center gap-1">
+                                <i class="fa-solid fa-box text-[10px]"></i> 
+                                ${isLowStock ? `Only ${minStock} left` : `${minStock} in stock`}
+                            </div>
+                            <div class="social-proof">${Math.floor(Math.random()*18)+7} bought today</div>
+                        </div>
+                        
+                        ${isLowStock ? `<div class="stock-bar"><div class="stock-bar-fill" style="width: ${Math.max(15, minStock * 5)}%"></div></div>` : ''}
                         
                         <div class="mt-4 flex gap-x-2">
                             <button onclick="addToCart(${product.id}); event.stopImmediatePropagation()" 
@@ -1014,7 +1045,9 @@
                 `
                 grid.appendChild(card)
             })
-        }
+            
+            // Start live countdown timers
+            startCountdownTimers()
         
         function addToCart(productId) {
             const product = products.find(p => p.id === productId)
