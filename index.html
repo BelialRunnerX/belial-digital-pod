@@ -667,26 +667,32 @@
     <!-- Enhanced Checkout Modal with Shipping Form Stub + Summary -->
     <div id="checkout-modal" onclick="if (event.target.id === 'checkout-modal') hideCheckout()" class="hidden fixed inset-0 bg-black/90 z-[110] flex items-center justify-center p-4">
         <div onclick="event.stopImmediatePropagation()" class="bg-zinc-900 w-full max-w-[920px] md:rounded-3xl border border-zinc-700 rounded-3xl overflow-hidden shadow-2xl">
-            <!-- Progress Steps -->
-            <div class="px-8 pt-6 pb-4 bg-zinc-950 border-b border-zinc-800 flex items-center justify-between text-xs tracking-[2px]">
-                <div class="flex items-center gap-x-3">
-                    <div onclick="goToStep(1)" class="step-pill cursor-pointer flex items-center gap-x-2 px-3 py-1 rounded-full border border-emerald-400/60 text-emerald-400" id="step-pill-1">
-                        <span class="font-mono">01</span> <span class="hidden md:inline">SHIPPING</span>
+            <!-- Progress Steps with clearer bar indicator -->
+            <div class="px-8 pt-6 pb-4 bg-zinc-950 border-b border-zinc-800">
+                <div class="flex items-center justify-between mb-3 text-xs tracking-[2px]">
+                    <div class="flex items-center gap-x-3">
+                        <div onclick="goToStep(1)" class="step-pill cursor-pointer flex items-center gap-x-2 px-3 py-1 rounded-full border border-emerald-400/60 text-emerald-400" id="step-pill-1">
+                            <span class="font-mono">01</span> <span class="hidden md:inline">SHIPPING</span>
+                        </div>
+                        <div class="text-zinc-600">→</div>
+                        <div onclick="goToStep(2)" class="step-pill cursor-pointer flex items-center gap-x-2 px-3 py-1 rounded-full border border-zinc-700 text-zinc-400 hover:text-white" id="step-pill-2">
+                            <span class="font-mono">02</span> <span class="hidden md:inline">REVIEW</span>
+                        </div>
+                        <div class="text-zinc-600">→</div>
+                        <div onclick="goToStep(3)" class="step-pill cursor-pointer flex items-center gap-x-2 px-3 py-1 rounded-full border border-zinc-700 text-zinc-400 hover:text-white" id="step-pill-3">
+                            <span class="font-mono">03</span> <span class="hidden md:inline">PAYMENT</span>
+                        </div>
+                        <div class="text-zinc-600">→</div>
+                        <div class="step-pill flex items-center gap-x-2 px-3 py-1 rounded-full border border-zinc-700 text-zinc-400" id="step-pill-4">
+                            <span class="font-mono">04</span> <span class="hidden md:inline">CONFIRM</span>
+                        </div>
                     </div>
-                    <div class="text-zinc-600">→</div>
-                    <div onclick="goToStep(2)" class="step-pill cursor-pointer flex items-center gap-x-2 px-3 py-1 rounded-full border border-zinc-700 text-zinc-400 hover:text-white" id="step-pill-2">
-                        <span class="font-mono">02</span> <span class="hidden md:inline">REVIEW</span>
-                    </div>
-                    <div class="text-zinc-600">→</div>
-                    <div onclick="goToStep(3)" class="step-pill cursor-pointer flex items-center gap-x-2 px-3 py-1 rounded-full border border-zinc-700 text-zinc-400 hover:text-white" id="step-pill-3">
-                        <span class="font-mono">03</span> <span class="hidden md:inline">PAYMENT</span>
-                    </div>
-                    <div class="text-zinc-600">→</div>
-                    <div class="step-pill flex items-center gap-x-2 px-3 py-1 rounded-full border border-zinc-700 text-zinc-400" id="step-pill-4">
-                        <span class="font-mono">04</span> <span class="hidden md:inline">CONFIRM</span>
-                    </div>
+                    <button onclick="hideCheckout()" class="text-zinc-400 hover:text-white transition-colors"><i class="fa-solid fa-times fa-lg"></i></button>
                 </div>
-                <button onclick="hideCheckout()" class="text-zinc-400 hover:text-white transition-colors"><i class="fa-solid fa-times fa-lg"></i></button>
+                <!-- Progress bar for clearer indication -->
+                <div class="h-1 bg-zinc-800 rounded-full overflow-hidden">
+                    <div id="checkout-progress-bar" class="h-1 bg-gradient-to-r from-emerald-400 to-emerald-500 transition-all duration-300" style="width: 25%"></div>
+                </div>
             </div>
 
             <!-- STEP 1: SHIPPING -->
@@ -862,8 +868,9 @@
                         <i class="fa-solid fa-check-circle text-emerald-400 text-6xl"></i>
                     </div>
                     
-                    <div class="font-display text-4xl tracking-tighter mb-2">Order Confirmed</div>
-                    <div class="text-emerald-400 text-sm tracking-[4px] mb-8">POD ORDER SUCCESSFULLY CREATED</div>
+                    <div class="font-display text-4xl tracking-tighter mb-1">Thank You!</div>
+                    <div class="font-display text-3xl tracking-tighter mb-2 text-emerald-400">Your Order is Confirmed</div>
+                    <div class="text-emerald-400 text-sm tracking-[4px] mb-8">POD ORDER SUCCESSFULLY CREATED • PRINTFUL SYNCED</div>
                     
                     <div class="bg-zinc-950 border border-zinc-800 rounded-3xl p-8 mb-8 text-left">
                         <div class="flex justify-between items-baseline mb-6">
@@ -875,6 +882,12 @@
                                 <div class="text-xs text-zinc-400">TOTAL PAID</div>
                                 <div id="confirm-total" class="font-mono text-3xl font-semibold"></div>
                             </div>
+                        </div>
+                        
+                        <!-- Order Summary Recap -->
+                        <div class="mb-4">
+                            <div class="text-xs uppercase tracking-widest text-emerald-400/70 mb-2">ORDER SUMMARY RECAP</div>
+                            <div id="confirm-order-recap" class="text-sm text-zinc-300 bg-zinc-900/60 rounded-2xl p-4 border border-zinc-800 space-y-1"></div>
                         </div>
                         
                         <div class="text-xs uppercase tracking-widest text-emerald-400/70 mb-1">PRINTFUL FULFILLMENT STATUS</div>
@@ -891,6 +904,7 @@
                     </div>
                     
                     <div class="flex flex-col md:flex-row gap-3">
+                        <button onclick="trackOrder()" class="flex-1 py-4 bg-emerald-400 hover:bg-emerald-300 active:bg-emerald-500 text-emerald-950 font-semibold rounded-3xl transition-all flex items-center justify-center gap-x-2"><i class="fa-solid fa-truck"></i> <span>TRACK ORDER</span></button>
                         <button onclick="viewMyOrders(); hideCheckout()" class="flex-1 py-4 border border-zinc-700 hover:bg-zinc-800 rounded-3xl text-sm font-medium transition-all">VIEW ALL ORDERS</button>
                         <button onclick="finishCheckout()" class="flex-1 py-4 bg-white text-black font-semibold rounded-3xl hover:bg-emerald-400 active:bg-emerald-500 transition-all">RETURN TO STORE</button>
                     </div>
@@ -1400,11 +1414,22 @@
             const order = {
                 id: orderId,
                 date: new Date().toISOString(),
-                customer: {name, email, address: addrLine},
-                items: cart.map(i => ({name: i.name, qty: i.qty||1, price: i.price})),
+                lastUpdated: new Date().toISOString(),
+                customer: {name, email, address: addrLine, country},
+                items: cart.map(i => ({name: i.name, qty: i.qty||1, price: i.price, subtotal: i.price * (i.qty||1)})),
+                subtotal,
+                shipping,
+                tax,
                 total,
                 status: 'Processing',
-                tracking: 'TRK' + Math.random().toString(36).slice(2,10).toUpperCase()
+                tracking: 'TRK' + Math.random().toString(36).slice(2,10).toUpperCase(),
+                fulfillment: {
+                    provider: 'Printful',
+                    status: 'Queued for production',
+                    estProductionDays: '2-4',
+                    estShippingDays: '5-9'
+                },
+                paymentMethod: 'Card (demo)'
             };
             let orders = JSON.parse(localStorage.getItem('podOrders') || '[]');
             orders.unshift(order);
@@ -1474,6 +1499,11 @@
             document.body.insertAdjacentHTML('beforeend', modalHTML);
         }
 
+        function trackOrder() {
+            // Opens My Orders modal for tracking the latest/recent orders
+            viewMyOrders();
+        }
+
         function finishCheckout() {
             hideCheckout();
             // optionally show orders
@@ -1515,7 +1545,7 @@
                 timestamp: new Date().toISOString()
             }
             
-            console.log('%c[Checkout] Full order with shipping:', 'color:#22c55e', orderData)
+            
             
             // Simulate Printful fulfillment
             alert(`✅ Order placed successfully (demo)\n\nOrder ID: ${orderData.external_id}\nShip to: ${name}\n${address}, ${city} ${state} ${zip}\n${country}\n\nTotal: $${total}\n\nPrintful will now process fulfillment and send tracking.`)
@@ -1783,7 +1813,7 @@
                 timestamp: new Date().toISOString()
             }
             
-            console.log('%c[Printful Integration] Order payload ready for fulfillment:', 'color:#22c55e', orderData)
+            
             
             alert(`Order submitted to Printful (demo)\n\nOrder ID: ${orderData.external_id}\nTotal: $${total}\n\nPrintful would now generate packing slips, mockups, and fulfill.`)
             
@@ -1824,9 +1854,9 @@
                 const res = await fetch('products.json')
                 if (!res.ok) throw new Error('HTTP ' + res.status)
                 products = await res.json()
-                console.log('%c[Dynamic Load] Loaded ' + products.length + ' products from products.json', 'color:#22c55e')
+                
             } catch(e) {
-                console.error('Failed to fetch products.json', e)
+                
                 products = []
             }
             
