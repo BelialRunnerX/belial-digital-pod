@@ -1550,11 +1550,17 @@
             // Simulate Printful fulfillment
             alert(`✅ Order placed successfully (demo)\n\nOrder ID: ${orderData.external_id}\nShip to: ${name}\n${address}, ${city} ${state} ${zip}\n${country}\n\nTotal: $${total}\n\nPrintful will now process fulfillment and send tracking.`)
             
+            // Save order
+            let orders = JSON.parse(localStorage.getItem('podOrders') || '[]')
+            orders.unshift(orderData)
+            localStorage.setItem('podOrders', JSON.stringify(orders))
+
             // Clear everything
             cart = []
             saveCart()
             updateCartCount()
             hideCheckout()
+            alert(`✅ Order placed successfully (demo)\n\nOrder ID: ${orderData.external_id}\nTotal: $${total}`)
             
             // Update demo counters
             const synced = document.getElementById('synced-count')
