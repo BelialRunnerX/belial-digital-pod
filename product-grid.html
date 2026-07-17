@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products • Minimal Grid</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { font-family: system-ui, -apple-system, sans-serif; }
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 1.5rem;
+        }
+        .product-card {
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .product-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+        }
+        .product-img {
+            aspect-ratio: 1;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body class="bg-zinc-950 text-zinc-200">
+    <div class="max-w-7xl mx-auto px-6 py-12">
+        <!-- Header -->
+        <div class="flex items-center justify-between mb-8">
+            <div>
+                <h1 class="text-3xl font-semibold tracking-tight">Products</h1>
+                <p class="text-zinc-400 mt-1 text-sm" id="product-count">Loading...</p>
+            </div>
+            <div class="text-sm text-zinc-500">Minimal • Functional</div>
+        </div>
+
+        <!-- Category Filters -->
+        <div id="filter-buttons" class="flex flex-wrap gap-2 mb-8">
+            <!-- Populated by JS -->
+        </div>
+
+        <!-- Sort Controls -->
+        <div class="flex items-center justify-between mb-4">
+            <div class="text-sm text-zinc-400" id="results-count"></div>
+            <div>
+                <label class="text-sm text-zinc-400 mr-2">Sort by</label>
+                <select id="sort-select" class="bg-zinc-900 border border-zinc-800 text-zinc-200 rounded-lg px-3 py-1.5 text-sm focus:outline-none focus:border-zinc-600">
+                    <option value="default">Default</option>
+                    <option value="price-low">Price: Low to High</option>
+                    <option value="price-high">Price: High to Low</option>
+                    <option value="name-asc">Name: A to Z</option>
+                    <option value="name-desc">Name: Z to A</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Grid -->
+        <div id="products-grid" class="product-grid">
+            <!-- Populated by JS -->
+        </div>
+    </div>
+
+    <script>
+        let allProducts = [];
+        let currentSort = 'default';
+
+        function sortProducts(products, sortMode) {
+            const sorted = [...products];
+            switch (sortMode) {
+                case 'price-low':
+                    sorted.sort((a, b) => a.price - b.price);
+                    break;
+                case 'price-high':
+                    sorted.sort((a, b) => b.price - a.price);
+                    break;
+                case 'name-asc':
+                    sorted.sort((a, b) => a.name.localeCompare(b.name));
+                    break;
+                case 'name-desc':
+                    sorted.sort((a, b) => b.name.localeCompare(a.name));
+                    break;
+                default:
+                    // keep original order
+                    break;
+            }
+            return sorted;
+        }
+
+        function renderProducts(products) {
+            const grid = document.getElementById('products-grid');
+            const countEl = document.getElementById('product-count');
+            const resultsEl = document.getElementById('results-count');
+
+            grid.innerHTML = '';
+
+            if (!products.length) {
+                grid.innerHTML = `<div class="col-span-full text-center py-12 text-zinc-500">No products found.</div>`;
+                return;
+            }
+
+            countEl.textContent = `${allProducts.length} products`;
+            if (resultsEl) resultsEl.textContent = `Showing ${products.length}`;
+
+            products.forEach(product => {
+                const card = document.createElement('div');
+                card.className = 'product-card bg-zinc-900 border border-zinc-800 rounded-2xl overflow-hidden cursor-pointer';
+
+                card.innerHTML = `
+                    <div class="relative">
+                        <img 
+                            src="${product.mockup}" 
+                            alt="${product.name}" 
+                            class="product-img w-full"
+                            loading="lazy"
+                            onerror="this.src='https://picsum.photos/id/1015/600/600'"
+                        >
+                    </div>
+                    <div class="p-5">
+                        <div class="font-medium text-lg tracking-tight leading-tight mb-1">
+                            ${product.name}
+                        </div>
+                        <div class="text-sm text-zinc-400 mb-4">
+                            ${product.design || product.type}
+                        </div>
+                        
+                        <div class="flex items-baseline justify-between">
+                            <div class="font-mono text-2xl font-semibold tabular-nums">
+                                $${product.price}
+                            </div>
+                            <div class="text-xs px-2.5 py-0.5 bg-zinc-800 text-zinc-400 rounded-full">
+                                ${product.type}
+                            </div>
+                        </div>
+                    </div>
+                `;
+
+                card.onclick = () => openModal(product);
+                grid.appendChild(card);
+            });
+        }
+
+        function applySortAndRender() {
+            const select = document.getElementById('sort-select');
+            currentSort = select ? select.value : 'default';
+            const sorted = sortProducts(allProducts, currentSort);
+            renderProducts(sorted);
+        }
+
+
+        let currentModalProduct = null;
+
+        function openModal(product) {
+            currentModalProduct = product;
+            document.getElementById("product-modal").classList.remove("hidden");
+            document.getElementById("product-modal").classList.add("flex");
+            
+            document.getElementById("modal-name").textContent = product.name;
+            document.getElementById("modal-price").textContent = `$${product.price}`;
+            document.getElementById("modal-type").textContent = product.type;
+            document.getElementById("modal-description").textContent = product.description || "No description available.";
+            document.getElementById("modal-image").src = product.mockup || "https://picsum.photos/id/1015/600/600";
+            document.getElementById("modal-image").alt = product.name;
+            
+            // Design
+            const designEl = document.getElementById("modal-design");
+            const designContainer = document.getElementById("modal-design-container");
+            if (product.design) {
+                designEl.textContent = product.design;
+                designContainer.style.display = "";
+            } else {
+                designContainer.style.display = "none";
+            }
+            
+            // Sizes
+            const sizesContainer = document.getElementById("modal-sizes-container");
+            const sizesEl = document.getElementById("modal-sizes");
+            sizesEl.innerHTML = "";
+            if (product.sizes && product.sizes.length) {
+                product.sizes.forEach(size => {
+                    const pill = document.createElement("div");
+                    pill.className = "px-3 py-1 text-xs bg-zinc-800 border border-zinc-700 rounded-full";
+                    pill.textContent = size;
+                    sizesEl.appendChild(pill);
+                });
+                sizesContainer.style.display = "";
+            } else {
+                sizesContainer.style.display = "none";
+            }
+            
+            // Variants / Stock
+            const variantsContainer = document.getElementById("modal-variants-container");
+            const variantsEl = document.getElementById("modal-variants");
+            variantsEl.innerHTML = "";
+            if (product.variants && product.variants.length) {
+                product.variants.forEach(v => {
+                    const item = document.createElement("div");
+                    item.className = "px-3 py-2 bg-zinc-800 border border-zinc-700 rounded-xl flex justify-between";
+                    item.innerHTML = `<span>${v.size} ${v.color ? "• " + v.color : ""}</span><span class="font-mono text-emerald-400">${v.stock}</span>`;
+                    variantsEl.appendChild(item);
+                });
+                variantsContainer.style.display = "";
+            } else {
+                variantsContainer.style.display = "none";
+            }
+        }
+        
+        function closeModal() {
+            const modal = document.getElementById("product-modal");
+            modal.classList.remove("flex");
+            modal.classList.add("hidden");
+            currentModalProduct = null;
+        }
+        
+        function addToCartFromModal() {
+            if (!currentModalProduct) return;
+            alert(`Added ${currentModalProduct.name} to cart! (demo)`);
+            closeModal();
+        }
+        
+        // Keyboard support
+        document.addEventListener("keydown", function(e) {
+            if (e.key === "Escape") {
+                const modal = document.getElementById("product-modal");
+                if (!modal.classList.contains("hidden")) {
+                    closeModal();
+                }
+            }
+        });
+
+        async function loadProducts() {
+            try {
+                const res = await fetch('products.json');
+                if (!res.ok) throw new Error('Failed to load products.json');
+                allProducts = await res.json();
+
+                const select = document.getElementById('sort-select');
+                if (select) {
+                    select.addEventListener('change', applySortAndRender);
+                }
+
+                // Initial render (default sort)
+                applySortAndRender();
+            } catch (err) {
+                document.getElementById('products-grid').innerHTML = `
+                    <div class="col-span-full text-center py-12 text-red-400">
+                        Error loading products: ${err.message}
+                    </div>
+                `;
+            }
+        }
+
+        // Initialize
+        loadProducts();
+    </script>
+</body>
+</html>
